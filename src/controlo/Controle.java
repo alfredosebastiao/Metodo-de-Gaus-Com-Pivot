@@ -51,6 +51,14 @@ public class Controle {
     }
     
     public ArrayList<ArrayList<Double>> retornarZeroAbaixo(ArrayList<ArrayList<Double>> matriz,int coluna){
+        for(int i = coluna+1; i < this.numeroDeVariaveis; i++ ){
+            
+        }
         return null;
     }
+    
+    public double retornarMuliplicadorDaLinha(){
+        return null;
+    }
+}
 }

@@ -51,14 +51,22 @@ public class Controle {
     }
     
     public ArrayList<ArrayList<Double>> retornarZeroAbaixo(ArrayList<ArrayList<Double>> matriz,int coluna){
+        ArrayList<Double> auxMultiplicado  = new ArrayList();
         for(int i = coluna+1; i < this.numeroDeVariaveis; i++ ){
+            double multiplicador = this.retornarMuliplicadorDaLinha(matriz,coluna, i);
+            
+            for(int j = 0; j < this.numeroDeVariaveis; j++){
+                auxMultiplicado.add(matriz.get(i).get(j) - multiplicador*matriz.get(coluna).get(coluna));
+                matriz.set(i, auxMultiplicado);
+            }
             
         }
-        return null;
+        return matriz;
     }
     
-    public double retornarMuliplicadorDaLinha(){
-        return null;
+    private double retornarMuliplicadorDaLinha(ArrayList<ArrayList<Double>> matriz,int linha,int coluna){
+                
+        return matriz.get(linha).get(coluna) / matriz.get(linha-1).get(coluna);
     }
-}
+
 }

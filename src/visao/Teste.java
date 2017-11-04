@@ -9,7 +9,7 @@ package visao;
  *
  * @author User
  */
-public class teste {
+public class Teste {
 
     /**
      * @param args the command line arguments

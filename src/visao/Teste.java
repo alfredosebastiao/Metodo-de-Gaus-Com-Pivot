@@ -5,6 +5,8 @@
  */
 package visao;
 import controlo.Controle;
+import java.util.ArrayList;
+import javax.swing.JOptionPane;
 /**
  *
  * @author User
@@ -15,9 +17,27 @@ public class Teste {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        Controle c = new Controle();
+       Controle c = new Controle();
+       ArrayList<ArrayList<Double>> matriz = new ArrayList();
         
-        c.receberMatriz(null);
+       ArrayList<Double> a = new ArrayList();
+       
+       a.add(1.0);
+       a.add(-1.0);
+       a.add(2.0);
+       matriz.add(a);
+       a = new ArrayList();
+       a.add(2.0);
+       a.add(2.0);
+       a.add(-1.0);
+       matriz.add(a);
+       a = new ArrayList();
+       a.add(-2.0);
+       a.add(-5.0);
+       a.add(3.0);
+       matriz.add(a);
+              
+       c.receberMatriz(matriz);
         
     }
     

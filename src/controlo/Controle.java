@@ -17,8 +17,12 @@ public class Controle {
         this.matriz = new ArrayList<>();
         this.matriz = matriz;
         this.numeroDeVariaveis = this.matriz.size();
+       
+        for(int i = 0; i < this.numeroDeVariaveis; i++){
+            this.matriz = retornarMatrizComPivot(this.matriz, i);
+        }
         
-        
+        this.imprimirMatriz(matriz);
     }
     
     public ArrayList<ArrayList<Double>> retornarMatrizComPivot(ArrayList<ArrayList<Double>> matriz,int coluna){
@@ -27,8 +31,8 @@ public class Controle {
         ArrayList<Double> auxParaTroca = new ArrayList();
         auxParaTroca = matriz.get(coluna);
         matriz.set(coluna, matriz.get(linhaDoPivot));
-        this.matriz = retornarZeroAbaixo(matriz, coluna);
-        return null;
+        return this.matriz = retornarZeroAbaixo(matriz, coluna);
+       // return null;
     }
     
     
@@ -41,7 +45,6 @@ public class Controle {
                 linha = i;
             }
         }
-        
         return linha;
     }
     
@@ -62,5 +65,15 @@ public class Controle {
     private double retornarMuliplicadorDaLinha(ArrayList<ArrayList<Double>> matriz,int linha,int coluna){                
         return matriz.get(linha).get(coluna) / matriz.get(linha-1).get(coluna);
     }
-
+    
+    private void imprimirMatriz(ArrayList<ArrayList<Double>> matriz){
+        for(int i=0;i < this.numeroDeVariaveis; i++){
+            for(int j=0;j < this.numeroDeVariaveis; i++){
+                System.out.print(matriz.get(i).get(j)+ " | ");
+            }
+            System.out.println("");
+        }
+        
+        
+    }
 }

@@ -1,6 +1,8 @@
 package controlo;
 
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 import javax.swing.JOptionPane;
 
 /**
@@ -14,7 +16,7 @@ public class Controle {
     ArrayList<ArrayList<Double>> matrizEscalonada;
     int numeroDeVariaveis = 3;
     
-    public void receberMatriz(ArrayList<ArrayList<Double>> matriz){
+    public void receberMatriz(ArrayList<ArrayList<Double>> matriz, ArrayList<Double> Results){
         this.matriz = new ArrayList<>();
         this.matriz = matriz;
         this.numeroDeVariaveis = this.matriz.size();
@@ -24,7 +26,8 @@ public class Controle {
             
             this.matriz = retornarMatrizComPivot(this.matriz, i);
         }
-         System.out.println("Ultima impressao");
+        
+        System.out.println("Ultima impressao");
         this.imprimirMatriz(matriz);
     }
     
@@ -61,7 +64,7 @@ public class Controle {
             auxMultiplicado  = new ArrayList();
             double multiplicador = this.retornarMuliplicadorDaLinha(matriz,coluna, i);
             System.out.println("multiplicador: "+multiplicador);
-            for(int j = 0; j < this.numeroDeVariaveis; j++){    
+            for(int j = 0; j <= this.numeroDeVariaveis; j++){    
                
                 auxMultiplicado.add(matriz.get(i).get(j) - multiplicador*matriz.get(coluna).get(j));   
             }
@@ -82,12 +85,27 @@ public class Controle {
     private void imprimirMatriz(ArrayList<ArrayList<Double>> matriz){
         
         for(int i=0;i < this.numeroDeVariaveis; i++){
-            for(int j=0;j < this.numeroDeVariaveis; j++){
+            for(int j=0;j <= this.numeroDeVariaveis; j++){
                 System.out.print(matriz.get(i).get(j)+ " | ");
             }
             System.out.println("");
         }
         System.out.println("==============================================");
         
+    }
+    
+    public Map<String,Double> retornarResultados(ArrayList<ArrayList<Double>> matriz){
+        Map<String,Double> mapa = new HashMap<>();
+        double x = 0;
+        for(int i = matriz.size(); i <= 0;i--){
+            double somaDosAnteriores = 0;
+            
+            for(int j = i; j <= 0; j--){
+                
+            }
+            
+            x = matriz.get(i).get(i+1);
+        }
+        return mapa;
     }
 }

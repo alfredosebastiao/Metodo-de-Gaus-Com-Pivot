@@ -25,20 +25,28 @@ public class Teste {
        a.add(1.0);
        a.add(-1.0);
        a.add(2.0);
+       a.add(2.0);
        matriz.add(a);
        a = new ArrayList();
        a.add(2.0);
        a.add(2.0);
        a.add(-1.0);
+       a.add(0.0);
        matriz.add(a);
        a = new ArrayList();
        a.add(-2.0);
        a.add(-5.0);
        a.add(3.0);
+       a.add(3.0);
+       
        matriz.add(a);
-              
-       c.receberMatriz(matriz);
-        
+          
+        ArrayList<Double> results = new ArrayList();
+       results.add(0.0);
+       results.add(2.0);
+       results.add(3.0);
+       c.receberMatriz(matriz, results);
+      
     }
     
 }

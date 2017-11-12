@@ -30,6 +30,24 @@ public class Tela extends javax.swing.JFrame {
         pnPrincipal = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
+        jPanel2 = new javax.swing.JPanel();
+        jXTextField1 = new org.jdesktop.swingx.JXTextField();
+        jXTextField2 = new org.jdesktop.swingx.JXTextField();
+        jXTextField3 = new org.jdesktop.swingx.JXTextField();
+        jLabel2 = new javax.swing.JLabel();
+        jXTextField4 = new org.jdesktop.swingx.JXTextField();
+        jXTextField5 = new org.jdesktop.swingx.JXTextField();
+        jXTextField6 = new org.jdesktop.swingx.JXTextField();
+        jXTextField7 = new org.jdesktop.swingx.JXTextField();
+        jLabel3 = new javax.swing.JLabel();
+        jXTextField8 = new org.jdesktop.swingx.JXTextField();
+        jXTextField9 = new org.jdesktop.swingx.JXTextField();
+        jXTextField10 = new org.jdesktop.swingx.JXTextField();
+        jXTextField11 = new org.jdesktop.swingx.JXTextField();
+        jLabel4 = new javax.swing.JLabel();
+        jXTextField12 = new org.jdesktop.swingx.JXTextField();
+        jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -38,15 +56,129 @@ public class Tela extends javax.swing.JFrame {
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Equacao"));
 
+        jPanel2.setLayout(new java.awt.GridLayout(3, 4, 10, 10));
+
+        jXTextField1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jXTextField1.setMinimumSize(new java.awt.Dimension(50, 50));
+        jXTextField1.setPreferredSize(new java.awt.Dimension(50, 50));
+        jXTextField1.setPrompt("x11");
+        jXTextField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jXTextField1ActionPerformed(evt);
+            }
+        });
+        jPanel2.add(jXTextField1);
+
+        jXTextField2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jXTextField2.setMinimumSize(new java.awt.Dimension(50, 50));
+        jXTextField2.setPreferredSize(new java.awt.Dimension(50, 50));
+        jXTextField2.setPrompt("x12");
+        jPanel2.add(jXTextField2);
+
+        jXTextField3.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jXTextField3.setMinimumSize(new java.awt.Dimension(50, 50));
+        jXTextField3.setPreferredSize(new java.awt.Dimension(50, 50));
+        jXTextField3.setPrompt("x13");
+        jPanel2.add(jXTextField3);
+
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel2.setText("=");
+        jPanel2.add(jLabel2);
+
+        jXTextField4.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jXTextField4.setMinimumSize(new java.awt.Dimension(50, 50));
+        jXTextField4.setPreferredSize(new java.awt.Dimension(50, 50));
+        jXTextField4.setPrompt("b1");
+        jPanel2.add(jXTextField4);
+
+        jXTextField5.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jXTextField5.setMinimumSize(new java.awt.Dimension(50, 50));
+        jXTextField5.setPreferredSize(new java.awt.Dimension(50, 50));
+        jXTextField5.setPrompt("x21");
+        jPanel2.add(jXTextField5);
+
+        jXTextField6.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jXTextField6.setMinimumSize(new java.awt.Dimension(50, 50));
+        jXTextField6.setPreferredSize(new java.awt.Dimension(50, 50));
+        jXTextField6.setPrompt("x22");
+        jPanel2.add(jXTextField6);
+
+        jXTextField7.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jXTextField7.setMinimumSize(new java.awt.Dimension(50, 50));
+        jXTextField7.setPreferredSize(new java.awt.Dimension(50, 50));
+        jXTextField7.setPrompt("x23");
+        jPanel2.add(jXTextField7);
+
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel3.setText("=");
+        jPanel2.add(jLabel3);
+
+        jXTextField8.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jXTextField8.setMinimumSize(new java.awt.Dimension(50, 50));
+        jXTextField8.setPreferredSize(new java.awt.Dimension(50, 50));
+        jXTextField8.setPrompt("b2");
+        jPanel2.add(jXTextField8);
+
+        jXTextField9.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jXTextField9.setMinimumSize(new java.awt.Dimension(50, 50));
+        jXTextField9.setPreferredSize(new java.awt.Dimension(50, 50));
+        jXTextField9.setPrompt("x31");
+        jPanel2.add(jXTextField9);
+
+        jXTextField10.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jXTextField10.setMinimumSize(new java.awt.Dimension(50, 50));
+        jXTextField10.setPreferredSize(new java.awt.Dimension(50, 50));
+        jXTextField10.setPrompt("x32");
+        jPanel2.add(jXTextField10);
+
+        jXTextField11.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jXTextField11.setMinimumSize(new java.awt.Dimension(50, 50));
+        jXTextField11.setPreferredSize(new java.awt.Dimension(50, 50));
+        jXTextField11.setPrompt("x33");
+        jPanel2.add(jXTextField11);
+
+        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel4.setText("=");
+        jPanel2.add(jLabel4);
+
+        jXTextField12.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jXTextField12.setMinimumSize(new java.awt.Dimension(50, 50));
+        jXTextField12.setPreferredSize(new java.awt.Dimension(50, 50));
+        jXTextField12.setPrompt("b3");
+        jPanel2.add(jXTextField12);
+
+        jButton1.setText("Adicionar variavel");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
+        jButton2.setText("Remover variavel");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 480, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 272, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 45, Short.MAX_VALUE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 555, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 373, Short.MAX_VALUE))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout pnPrincipalLayout = new javax.swing.GroupLayout(pnPrincipal);
@@ -69,7 +201,7 @@ public class Tela extends javax.swing.JFrame {
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(19, Short.MAX_VALUE))
+                .addContainerGap(291, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -86,6 +218,14 @@ public class Tela extends javax.swing.JFrame {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jXTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jXTextField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jXTextField1ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -123,8 +263,26 @@ public class Tela extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private org.jdesktop.swingx.JXTextField jXTextField1;
+    private org.jdesktop.swingx.JXTextField jXTextField10;
+    private org.jdesktop.swingx.JXTextField jXTextField11;
+    private org.jdesktop.swingx.JXTextField jXTextField12;
+    private org.jdesktop.swingx.JXTextField jXTextField2;
+    private org.jdesktop.swingx.JXTextField jXTextField3;
+    private org.jdesktop.swingx.JXTextField jXTextField4;
+    private org.jdesktop.swingx.JXTextField jXTextField5;
+    private org.jdesktop.swingx.JXTextField jXTextField6;
+    private org.jdesktop.swingx.JXTextField jXTextField7;
+    private org.jdesktop.swingx.JXTextField jXTextField8;
+    private org.jdesktop.swingx.JXTextField jXTextField9;
     private javax.swing.JPanel pnPrincipal;
     // End of variables declaration//GEN-END:variables
 }

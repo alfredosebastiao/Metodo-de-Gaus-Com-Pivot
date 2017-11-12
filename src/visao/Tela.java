@@ -29,21 +29,21 @@ public class Tela extends javax.swing.JFrame {
 
         pnPrincipal = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jPanel1 = new javax.swing.JPanel();
+        tfB3 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
-        jXTextField1 = new org.jdesktop.swingx.JXTextField();
-        jXTextField2 = new org.jdesktop.swingx.JXTextField();
-        jXTextField3 = new org.jdesktop.swingx.JXTextField();
+        tfX11 = new org.jdesktop.swingx.JXTextField();
+        tfX12 = new org.jdesktop.swingx.JXTextField();
+        tfX13 = new org.jdesktop.swingx.JXTextField();
         jLabel2 = new javax.swing.JLabel();
-        jXTextField4 = new org.jdesktop.swingx.JXTextField();
-        jXTextField5 = new org.jdesktop.swingx.JXTextField();
-        jXTextField6 = new org.jdesktop.swingx.JXTextField();
-        jXTextField7 = new org.jdesktop.swingx.JXTextField();
+        tfB1 = new org.jdesktop.swingx.JXTextField();
+        tfX21 = new org.jdesktop.swingx.JXTextField();
+        tfX22 = new org.jdesktop.swingx.JXTextField();
+        tfX23 = new org.jdesktop.swingx.JXTextField();
         jLabel3 = new javax.swing.JLabel();
-        jXTextField8 = new org.jdesktop.swingx.JXTextField();
-        jXTextField9 = new org.jdesktop.swingx.JXTextField();
-        jXTextField10 = new org.jdesktop.swingx.JXTextField();
-        jXTextField11 = new org.jdesktop.swingx.JXTextField();
+        tfXB2 = new org.jdesktop.swingx.JXTextField();
+        tfX31 = new org.jdesktop.swingx.JXTextField();
+        tfX32 = new org.jdesktop.swingx.JXTextField();
+        tfX33 = new org.jdesktop.swingx.JXTextField();
         jLabel4 = new javax.swing.JLabel();
         jXTextField12 = new org.jdesktop.swingx.JXTextField();
         jButton1 = new javax.swing.JButton();
@@ -63,99 +63,104 @@ public class Tela extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jLabel1.setText("Resolucao de Sistemas de equacao pelo Metodo de Gaus Com pivot");
 
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Equacao"));
+        tfB3.setBorder(javax.swing.BorderFactory.createTitledBorder("Equacao"));
 
         jPanel2.setLayout(new java.awt.GridLayout(3, 4, 10, 10));
 
-        jXTextField1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jXTextField1.setFocusBehavior(org.jdesktop.swingx.prompt.PromptSupport.FocusBehavior.SHOW_PROMPT);
-        jXTextField1.setMinimumSize(new java.awt.Dimension(50, 50));
-        jXTextField1.setPreferredSize(new java.awt.Dimension(50, 50));
-        jXTextField1.setPrompt("x11");
-        jXTextField1.addActionListener(new java.awt.event.ActionListener() {
+        tfX11.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        tfX11.setFocusBehavior(org.jdesktop.swingx.prompt.PromptSupport.FocusBehavior.SHOW_PROMPT);
+        tfX11.setMinimumSize(new java.awt.Dimension(50, 50));
+        tfX11.setPreferredSize(new java.awt.Dimension(50, 50));
+        tfX11.setPrompt("x11");
+        tfX11.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jXTextField1ActionPerformed(evt);
+                tfX11ActionPerformed(evt);
             }
         });
-        jPanel2.add(jXTextField1);
+        jPanel2.add(tfX11);
 
-        jXTextField2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jXTextField2.setFocusBehavior(org.jdesktop.swingx.prompt.PromptSupport.FocusBehavior.SHOW_PROMPT);
-        jXTextField2.setMinimumSize(new java.awt.Dimension(50, 50));
-        jXTextField2.setPreferredSize(new java.awt.Dimension(50, 50));
-        jXTextField2.setPrompt("x12");
-        jPanel2.add(jXTextField2);
+        tfX12.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        tfX12.setFocusBehavior(org.jdesktop.swingx.prompt.PromptSupport.FocusBehavior.SHOW_PROMPT);
+        tfX12.setMinimumSize(new java.awt.Dimension(50, 50));
+        tfX12.setPreferredSize(new java.awt.Dimension(50, 50));
+        tfX12.setPrompt("x12");
+        jPanel2.add(tfX12);
 
-        jXTextField3.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jXTextField3.setFocusBehavior(org.jdesktop.swingx.prompt.PromptSupport.FocusBehavior.SHOW_PROMPT);
-        jXTextField3.setMinimumSize(new java.awt.Dimension(50, 50));
-        jXTextField3.setPreferredSize(new java.awt.Dimension(50, 50));
-        jXTextField3.setPrompt("x13");
-        jPanel2.add(jXTextField3);
+        tfX13.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        tfX13.setFocusBehavior(org.jdesktop.swingx.prompt.PromptSupport.FocusBehavior.SHOW_PROMPT);
+        tfX13.setMinimumSize(new java.awt.Dimension(50, 50));
+        tfX13.setPreferredSize(new java.awt.Dimension(50, 50));
+        tfX13.setPrompt("x13");
+        tfX13.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                tfX13ActionPerformed(evt);
+            }
+        });
+        jPanel2.add(tfX13);
 
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel2.setText("=");
         jPanel2.add(jLabel2);
 
-        jXTextField4.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jXTextField4.setFocusBehavior(org.jdesktop.swingx.prompt.PromptSupport.FocusBehavior.SHOW_PROMPT);
-        jXTextField4.setMinimumSize(new java.awt.Dimension(50, 50));
-        jXTextField4.setPreferredSize(new java.awt.Dimension(50, 50));
-        jXTextField4.setPrompt("b1");
-        jPanel2.add(jXTextField4);
+        tfB1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        tfB1.setFocusBehavior(org.jdesktop.swingx.prompt.PromptSupport.FocusBehavior.SHOW_PROMPT);
+        tfB1.setMinimumSize(new java.awt.Dimension(50, 50));
+        tfB1.setPreferredSize(new java.awt.Dimension(50, 50));
+        tfB1.setPrompt("b1");
+        jPanel2.add(tfB1);
 
-        jXTextField5.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jXTextField5.setFocusBehavior(org.jdesktop.swingx.prompt.PromptSupport.FocusBehavior.SHOW_PROMPT);
-        jXTextField5.setMinimumSize(new java.awt.Dimension(50, 50));
-        jXTextField5.setPreferredSize(new java.awt.Dimension(50, 50));
-        jXTextField5.setPrompt("x21");
-        jPanel2.add(jXTextField5);
+        tfX21.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        tfX21.setFocusBehavior(org.jdesktop.swingx.prompt.PromptSupport.FocusBehavior.SHOW_PROMPT);
+        tfX21.setMinimumSize(new java.awt.Dimension(50, 50));
+        tfX21.setPreferredSize(new java.awt.Dimension(50, 50));
+        tfX21.setPrompt("x21");
+        jPanel2.add(tfX21);
 
-        jXTextField6.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jXTextField6.setFocusBehavior(org.jdesktop.swingx.prompt.PromptSupport.FocusBehavior.SHOW_PROMPT);
-        jXTextField6.setMinimumSize(new java.awt.Dimension(50, 50));
-        jXTextField6.setPreferredSize(new java.awt.Dimension(50, 50));
-        jXTextField6.setPrompt("x22");
-        jPanel2.add(jXTextField6);
+        tfX22.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        tfX22.setFocusBehavior(org.jdesktop.swingx.prompt.PromptSupport.FocusBehavior.SHOW_PROMPT);
+        tfX22.setMinimumSize(new java.awt.Dimension(50, 50));
+        tfX22.setPreferredSize(new java.awt.Dimension(50, 50));
+        tfX22.setPrompt("x22");
+        jPanel2.add(tfX22);
 
-        jXTextField7.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jXTextField7.setFocusBehavior(org.jdesktop.swingx.prompt.PromptSupport.FocusBehavior.SHOW_PROMPT);
-        jXTextField7.setMinimumSize(new java.awt.Dimension(50, 50));
-        jXTextField7.setPreferredSize(new java.awt.Dimension(50, 50));
-        jXTextField7.setPrompt("x23");
-        jPanel2.add(jXTextField7);
+        tfX23.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        tfX23.setFocusBehavior(org.jdesktop.swingx.prompt.PromptSupport.FocusBehavior.SHOW_PROMPT);
+        tfX23.setMinimumSize(new java.awt.Dimension(50, 50));
+        tfX23.setPreferredSize(new java.awt.Dimension(50, 50));
+        tfX23.setPrompt("x23");
+        jPanel2.add(tfX23);
 
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("=");
         jPanel2.add(jLabel3);
 
-        jXTextField8.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jXTextField8.setFocusBehavior(org.jdesktop.swingx.prompt.PromptSupport.FocusBehavior.SHOW_PROMPT);
-        jXTextField8.setMinimumSize(new java.awt.Dimension(50, 50));
-        jXTextField8.setPreferredSize(new java.awt.Dimension(50, 50));
-        jXTextField8.setPrompt("b2");
-        jPanel2.add(jXTextField8);
+        tfXB2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        tfXB2.setFocusBehavior(org.jdesktop.swingx.prompt.PromptSupport.FocusBehavior.SHOW_PROMPT);
+        tfXB2.setMinimumSize(new java.awt.Dimension(50, 50));
+        tfXB2.setPreferredSize(new java.awt.Dimension(50, 50));
+        tfXB2.setPrompt("b2");
+        jPanel2.add(tfXB2);
 
-        jXTextField9.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jXTextField9.setFocusBehavior(org.jdesktop.swingx.prompt.PromptSupport.FocusBehavior.SHOW_PROMPT);
-        jXTextField9.setMinimumSize(new java.awt.Dimension(50, 50));
-        jXTextField9.setPreferredSize(new java.awt.Dimension(50, 50));
-        jXTextField9.setPrompt("x31");
-        jPanel2.add(jXTextField9);
+        tfX31.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        tfX31.setFocusBehavior(org.jdesktop.swingx.prompt.PromptSupport.FocusBehavior.SHOW_PROMPT);
+        tfX31.setMinimumSize(new java.awt.Dimension(50, 50));
+        tfX31.setPreferredSize(new java.awt.Dimension(50, 50));
+        tfX31.setPrompt("x31");
+        jPanel2.add(tfX31);
 
-        jXTextField10.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jXTextField10.setFocusBehavior(org.jdesktop.swingx.prompt.PromptSupport.FocusBehavior.SHOW_PROMPT);
-        jXTextField10.setMinimumSize(new java.awt.Dimension(50, 50));
-        jXTextField10.setPreferredSize(new java.awt.Dimension(50, 50));
-        jXTextField10.setPrompt("x32");
-        jPanel2.add(jXTextField10);
+        tfX32.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        tfX32.setFocusBehavior(org.jdesktop.swingx.prompt.PromptSupport.FocusBehavior.SHOW_PROMPT);
+        tfX32.setMinimumSize(new java.awt.Dimension(50, 50));
+        tfX32.setPreferredSize(new java.awt.Dimension(50, 50));
+        tfX32.setPrompt("x32");
+        jPanel2.add(tfX32);
 
-        jXTextField11.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jXTextField11.setFocusBehavior(org.jdesktop.swingx.prompt.PromptSupport.FocusBehavior.SHOW_PROMPT);
-        jXTextField11.setMinimumSize(new java.awt.Dimension(50, 50));
-        jXTextField11.setPreferredSize(new java.awt.Dimension(50, 50));
-        jXTextField11.setPrompt("x33");
-        jPanel2.add(jXTextField11);
+        tfX33.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        tfX33.setFocusBehavior(org.jdesktop.swingx.prompt.PromptSupport.FocusBehavior.SHOW_PROMPT);
+        tfX33.setMinimumSize(new java.awt.Dimension(50, 50));
+        tfX33.setPreferredSize(new java.awt.Dimension(50, 50));
+        tfX33.setPrompt("x33");
+        jPanel2.add(tfX33);
 
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setText("=");
@@ -180,41 +185,46 @@ public class Tela extends javax.swing.JFrame {
         jButton3.setText("Limpar");
 
         jButton4.setText("Calcular");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout tfB3Layout = new javax.swing.GroupLayout(tfB3);
+        tfB3.setLayout(tfB3Layout);
+        tfB3Layout.setHorizontalGroup(
+            tfB3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jSeparator1, javax.swing.GroupLayout.Alignment.TRAILING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, tfB3Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addGroup(tfB3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, tfB3Layout.createSequentialGroup()
                         .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 272, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 127, Short.MAX_VALUE)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(tfB3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, tfB3Layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        tfB3Layout.setVerticalGroup(
+            tfB3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(tfB3Layout.createSequentialGroup()
+                .addGroup(tfB3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
+                    .addGroup(tfB3Layout.createSequentialGroup()
                         .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(10, 10, 10)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(tfB3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
@@ -275,7 +285,7 @@ public class Tela extends javax.swing.JFrame {
             pnPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnPrincipalLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(tfB3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
@@ -291,7 +301,7 @@ public class Tela extends javax.swing.JFrame {
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(pnPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(tfB3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -313,13 +323,21 @@ public class Tela extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jXTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jXTextField1ActionPerformed
+    private void tfX11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfX11ActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jXTextField1ActionPerformed
+    }//GEN-LAST:event_tfX11ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        this.preencherArrayDeValores();
+    }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void tfX13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfX13ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tfX13ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -367,25 +385,29 @@ public class Tela extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JTable jTable1;
-    private org.jdesktop.swingx.JXTextField jXTextField1;
-    private org.jdesktop.swingx.JXTextField jXTextField10;
-    private org.jdesktop.swingx.JXTextField jXTextField11;
     private org.jdesktop.swingx.JXTextField jXTextField12;
-    private org.jdesktop.swingx.JXTextField jXTextField2;
-    private org.jdesktop.swingx.JXTextField jXTextField3;
-    private org.jdesktop.swingx.JXTextField jXTextField4;
-    private org.jdesktop.swingx.JXTextField jXTextField5;
-    private org.jdesktop.swingx.JXTextField jXTextField6;
-    private org.jdesktop.swingx.JXTextField jXTextField7;
-    private org.jdesktop.swingx.JXTextField jXTextField8;
-    private org.jdesktop.swingx.JXTextField jXTextField9;
     private javax.swing.JPanel pnPrincipal;
+    private org.jdesktop.swingx.JXTextField tfB1;
+    private javax.swing.JPanel tfB3;
+    private org.jdesktop.swingx.JXTextField tfX11;
+    private org.jdesktop.swingx.JXTextField tfX12;
+    private org.jdesktop.swingx.JXTextField tfX13;
+    private org.jdesktop.swingx.JXTextField tfX21;
+    private org.jdesktop.swingx.JXTextField tfX22;
+    private org.jdesktop.swingx.JXTextField tfX23;
+    private org.jdesktop.swingx.JXTextField tfX31;
+    private org.jdesktop.swingx.JXTextField tfX32;
+    private org.jdesktop.swingx.JXTextField tfX33;
+    private org.jdesktop.swingx.JXTextField tfXB2;
     // End of variables declaration//GEN-END:variables
+
+    private void preencherArrayDeValores() {
+        
+    }
 }

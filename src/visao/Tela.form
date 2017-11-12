@@ -43,7 +43,7 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
+                  <Component id="tfB3" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="jPanel3" max="32767" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
@@ -62,7 +62,7 @@
                   <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                      <Component id="jPanel1" max="32767" attributes="0"/>
+                      <Component id="tfB3" max="32767" attributes="0"/>
                       <Component id="jPanel3" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace max="32767" attributes="0"/>
@@ -79,7 +79,7 @@
             <Property name="text" type="java.lang.String" value="Resolucao de Sistemas de equacao pelo Metodo de Gaus Com pivot"/>
           </Properties>
         </Component>
-        <Container class="javax.swing.JPanel" name="jPanel1">
+        <Container class="javax.swing.JPanel" name="tfB3">
           <Properties>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
@@ -147,7 +147,7 @@
                 <Property name="verticalGap" type="int" value="10"/>
               </Layout>
               <SubComponents>
-                <Component class="org.jdesktop.swingx.JXTextField" name="jXTextField1">
+                <Component class="org.jdesktop.swingx.JXTextField" name="tfX11">
                   <Properties>
                     <Property name="horizontalAlignment" type="int" value="0"/>
                     <Property name="focusBehavior" type="org.jdesktop.swingx.prompt.PromptSupport$FocusBehavior" editor="org.netbeans.modules.form.editors.EnumEditor">
@@ -162,10 +162,10 @@
                     <Property name="prompt" type="java.lang.String" value="x11"/>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jXTextField1ActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tfX11ActionPerformed"/>
                   </Events>
                 </Component>
-                <Component class="org.jdesktop.swingx.JXTextField" name="jXTextField2">
+                <Component class="org.jdesktop.swingx.JXTextField" name="tfX12">
                   <Properties>
                     <Property name="horizontalAlignment" type="int" value="0"/>
                     <Property name="focusBehavior" type="org.jdesktop.swingx.prompt.PromptSupport$FocusBehavior" editor="org.netbeans.modules.form.editors.EnumEditor">
@@ -180,7 +180,7 @@
                     <Property name="prompt" type="java.lang.String" value="x12"/>
                   </Properties>
                 </Component>
-                <Component class="org.jdesktop.swingx.JXTextField" name="jXTextField3">
+                <Component class="org.jdesktop.swingx.JXTextField" name="tfX13">
                   <Properties>
                     <Property name="horizontalAlignment" type="int" value="0"/>
                     <Property name="focusBehavior" type="org.jdesktop.swingx.prompt.PromptSupport$FocusBehavior" editor="org.netbeans.modules.form.editors.EnumEditor">
@@ -194,6 +194,9 @@
                     </Property>
                     <Property name="prompt" type="java.lang.String" value="x13"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tfX13ActionPerformed"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel2">
                   <Properties>
@@ -201,7 +204,7 @@
                     <Property name="text" type="java.lang.String" value="="/>
                   </Properties>
                 </Component>
-                <Component class="org.jdesktop.swingx.JXTextField" name="jXTextField4">
+                <Component class="org.jdesktop.swingx.JXTextField" name="tfB1">
                   <Properties>
                     <Property name="horizontalAlignment" type="int" value="0"/>
                     <Property name="focusBehavior" type="org.jdesktop.swingx.prompt.PromptSupport$FocusBehavior" editor="org.netbeans.modules.form.editors.EnumEditor">
@@ -216,7 +219,7 @@
                     <Property name="prompt" type="java.lang.String" value="b1"/>
                   </Properties>
                 </Component>
-                <Component class="org.jdesktop.swingx.JXTextField" name="jXTextField5">
+                <Component class="org.jdesktop.swingx.JXTextField" name="tfX21">
                   <Properties>
                     <Property name="horizontalAlignment" type="int" value="0"/>
                     <Property name="focusBehavior" type="org.jdesktop.swingx.prompt.PromptSupport$FocusBehavior" editor="org.netbeans.modules.form.editors.EnumEditor">
@@ -231,7 +234,7 @@
                     <Property name="prompt" type="java.lang.String" value="x21"/>
                   </Properties>
                 </Component>
-                <Component class="org.jdesktop.swingx.JXTextField" name="jXTextField6">
+                <Component class="org.jdesktop.swingx.JXTextField" name="tfX22">
                   <Properties>
                     <Property name="horizontalAlignment" type="int" value="0"/>
                     <Property name="focusBehavior" type="org.jdesktop.swingx.prompt.PromptSupport$FocusBehavior" editor="org.netbeans.modules.form.editors.EnumEditor">
@@ -246,7 +249,7 @@
                     <Property name="prompt" type="java.lang.String" value="x22"/>
                   </Properties>
                 </Component>
-                <Component class="org.jdesktop.swingx.JXTextField" name="jXTextField7">
+                <Component class="org.jdesktop.swingx.JXTextField" name="tfX23">
                   <Properties>
                     <Property name="horizontalAlignment" type="int" value="0"/>
                     <Property name="focusBehavior" type="org.jdesktop.swingx.prompt.PromptSupport$FocusBehavior" editor="org.netbeans.modules.form.editors.EnumEditor">
@@ -267,7 +270,7 @@
                     <Property name="text" type="java.lang.String" value="="/>
                   </Properties>
                 </Component>
-                <Component class="org.jdesktop.swingx.JXTextField" name="jXTextField8">
+                <Component class="org.jdesktop.swingx.JXTextField" name="tfXB2">
                   <Properties>
                     <Property name="horizontalAlignment" type="int" value="0"/>
                     <Property name="focusBehavior" type="org.jdesktop.swingx.prompt.PromptSupport$FocusBehavior" editor="org.netbeans.modules.form.editors.EnumEditor">
@@ -282,7 +285,7 @@
                     <Property name="prompt" type="java.lang.String" value="b2"/>
                   </Properties>
                 </Component>
-                <Component class="org.jdesktop.swingx.JXTextField" name="jXTextField9">
+                <Component class="org.jdesktop.swingx.JXTextField" name="tfX31">
                   <Properties>
                     <Property name="horizontalAlignment" type="int" value="0"/>
                     <Property name="focusBehavior" type="org.jdesktop.swingx.prompt.PromptSupport$FocusBehavior" editor="org.netbeans.modules.form.editors.EnumEditor">
@@ -297,7 +300,7 @@
                     <Property name="prompt" type="java.lang.String" value="x31"/>
                   </Properties>
                 </Component>
-                <Component class="org.jdesktop.swingx.JXTextField" name="jXTextField10">
+                <Component class="org.jdesktop.swingx.JXTextField" name="tfX32">
                   <Properties>
                     <Property name="horizontalAlignment" type="int" value="0"/>
                     <Property name="focusBehavior" type="org.jdesktop.swingx.prompt.PromptSupport$FocusBehavior" editor="org.netbeans.modules.form.editors.EnumEditor">
@@ -312,7 +315,7 @@
                     <Property name="prompt" type="java.lang.String" value="x32"/>
                   </Properties>
                 </Component>
-                <Component class="org.jdesktop.swingx.JXTextField" name="jXTextField11">
+                <Component class="org.jdesktop.swingx.JXTextField" name="tfX33">
                   <Properties>
                     <Property name="horizontalAlignment" type="int" value="0"/>
                     <Property name="focusBehavior" type="org.jdesktop.swingx.prompt.PromptSupport$FocusBehavior" editor="org.netbeans.modules.form.editors.EnumEditor">
@@ -374,6 +377,9 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Calcular"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton4ActionPerformed"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>

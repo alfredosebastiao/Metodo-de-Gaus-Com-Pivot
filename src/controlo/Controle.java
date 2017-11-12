@@ -28,7 +28,12 @@ public class Controle {
         }
         
         System.out.println("Ultima impressao");
-        this.imprimirMatriz(matriz);
+        this.imprimirMatriz(this.matriz);
+        
+        System.out.println("RESULT");
+        System.out.println(this.retornarResultados(matriz).toString());
+        
+        
     }
     
     public ArrayList<ArrayList<Double>> retornarMatrizComPivot(ArrayList<ArrayList<Double>> matriz,int coluna){
@@ -97,15 +102,29 @@ public class Controle {
     public Map<String,Double> retornarResultados(ArrayList<ArrayList<Double>> matriz){
         Map<String,Double> mapa = new HashMap<>();
         double x = 0;
-        for(int i = matriz.size(); i <= 0;i--){
-            double somaDosAnteriores = 0;
-            
-            for(int j = i; j <= 0; j--){
+        double somaDosAnteriores = 0;
+        for(int i = this.numeroDeVariaveis-1; i >= 0;i--){
+                       
+            somaDosAnteriores = matriz.get(i).get(this.numeroDeVariaveis);
+
+            for(int j = 2; j >= 0; j--){
+              
                 
+               if(i == j){
+                   mapa.put("X"+(i+1), somaDosAnteriores/matriz.get(i).get(i));
+                   matriz.get(i).set(this.numeroDeVariaveis, somaDosAnteriores/matriz.get(i).get(i));
+                   break;
+                 
+               }
+               else{
+                    somaDosAnteriores = somaDosAnteriores - (matriz.get(i).get(j) * matriz.get(j).get(this.numeroDeVariaveis));
+              
+               }
+               
             }
             
-            x = matriz.get(i).get(i+1);
         }
+        
         return mapa;
     }
 }

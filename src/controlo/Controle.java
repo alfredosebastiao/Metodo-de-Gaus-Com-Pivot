@@ -3,6 +3,8 @@ package controlo;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+import javax.swing.JTable;
+import modelo.ModeloDaTabela;
 
 
 /**
@@ -17,12 +19,14 @@ public class Controle {
     int numeroDeVariaveis = 3;
     
     
-    public void receberMatriz(ArrayList<ArrayList<Double>> matriz, ArrayList<Double> Results){
+    public void receberMatriz(ArrayList<ArrayList<Double>> matriz,JTable table){
         this.matriz = new ArrayList<>();
         this.matriz = matriz;
         this.numeroDeVariaveis = this.matriz.size();
         System.out.println("matriz original");
         this.imprimirMatriz(matriz);
+        
+        this.preencherTabela(matriz, table);
         for(int i = 0; i < this.numeroDeVariaveis; i++){
             
             this.matriz = retornarMatrizComPivot(this.matriz, i);
@@ -127,5 +131,13 @@ public class Controle {
         }
         
         return mapa;
+    }
+    
+    private ModeloDaTabela modeloDaTabela;
+    private JTable preencherTabela(ArrayList<ArrayList<Double>> matriz, JTable tabela){
+        modeloDaTabela = new ModeloDaTabela(matriz);
+        tabela.setModel(modeloDaTabela);
+        tabela.revalidate();
+        return tabela;
     }
 }

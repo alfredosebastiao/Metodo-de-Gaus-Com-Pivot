@@ -16,7 +16,7 @@ import javax.swing.table.AbstractTableModel;
 public class ModeloDaTabela extends AbstractTableModel {
     private ArrayList<Double> cadaLinha = new ArrayList();
     private ArrayList<ArrayList<Double>>  matriz = new ArrayList();
-    String[] colunas =  {"X1" ,"X2","X3","Bi","Pivot","equacao"};
+    String[] colunas =  {"X1" ,"X2","X3","Bi","equacao","Pivot",};
     public ModeloDaTabela( ArrayList<ArrayList<Double>> matriz) {
         setMatriz(matriz);
          
@@ -68,13 +68,11 @@ public class ModeloDaTabela extends AbstractTableModel {
         
         switch(columnIndex){
             case 0: return cadaLinha.get(0);
-            case 1: return cadaLinha.get(0);
-            case 2: return cadaLinha.get(0);
-            case 3: return cadaLinha.get(0);
-            case 4: return "---";
-            case 5: return "-----";
-         
-           
+            case 1: return cadaLinha.get(1);
+            case 2: return cadaLinha.get(2);
+            case 3: return cadaLinha.get(3);
+            case 4: return "------------";
+            case 5: return "------------";
         }
         
        

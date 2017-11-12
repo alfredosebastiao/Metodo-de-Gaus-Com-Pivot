@@ -59,7 +59,7 @@ public class Tela extends javax.swing.JFrame {
         jButton7 = new javax.swing.JButton();
         jButton8 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tabela = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -239,7 +239,7 @@ public class Tela extends javax.swing.JFrame {
 
         jButton8.setText("Calcular");
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tabela.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -250,7 +250,7 @@ public class Tela extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(tabela);
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -393,9 +393,9 @@ public class Tela extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
-    private javax.swing.JTable jTable1;
     private javax.swing.JPanel pnEquacao;
     private javax.swing.JPanel pnPrincipal;
+    private javax.swing.JTable tabela;
     private org.jdesktop.swingx.JXTextField tfB1;
     private org.jdesktop.swingx.JXTextField tfB3;
     private org.jdesktop.swingx.JXTextField tfX11;
@@ -441,6 +441,10 @@ public class Tela extends javax.swing.JFrame {
         cadaLinha.add(Double.parseDouble(tfB3.getText()));
         matriz.add(cadaLinha);
         
-        controle.receberMatriz(matriz, cadaLinha);
+        controle.receberMatriz(matriz, tabela);
+        
+        
     }
+    
+    
 }

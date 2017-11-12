@@ -43,7 +43,7 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="tfB3" min="-2" max="-2" attributes="0"/>
+                  <Component id="pnEquacao" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="jPanel3" max="32767" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
@@ -62,7 +62,7 @@
                   <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                      <Component id="tfB3" max="32767" attributes="0"/>
+                      <Component id="pnEquacao" max="32767" attributes="0"/>
                       <Component id="jPanel3" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace max="32767" attributes="0"/>
@@ -79,7 +79,7 @@
             <Property name="text" type="java.lang.String" value="Resolucao de Sistemas de equacao pelo Metodo de Gaus Com pivot"/>
           </Properties>
         </Component>
-        <Container class="javax.swing.JPanel" name="tfB3">
+        <Container class="javax.swing.JPanel" name="pnEquacao">
           <Properties>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
@@ -105,9 +105,9 @@
                           </Group>
                           <Group type="102" alignment="1" attributes="0">
                               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                              <Component id="jButton3" min="-2" pref="117" max="-2" attributes="0"/>
+                              <Component id="btnRemover" min="-2" pref="117" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="jButton4" min="-2" pref="117" max="-2" attributes="0"/>
+                              <Component id="btnCalcular" min="-2" pref="117" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
@@ -129,8 +129,8 @@
                       <Component id="jSeparator1" min="-2" pref="10" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="jButton3" alignment="3" min="-2" pref="48" max="-2" attributes="0"/>
-                          <Component id="jButton4" alignment="3" min="-2" pref="48" max="-2" attributes="0"/>
+                          <Component id="btnRemover" alignment="3" min="-2" pref="48" max="-2" attributes="0"/>
+                          <Component id="btnCalcular" alignment="3" min="-2" pref="48" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
@@ -336,7 +336,7 @@
                     <Property name="text" type="java.lang.String" value="="/>
                   </Properties>
                 </Component>
-                <Component class="org.jdesktop.swingx.JXTextField" name="jXTextField12">
+                <Component class="org.jdesktop.swingx.JXTextField" name="tfB3">
                   <Properties>
                     <Property name="horizontalAlignment" type="int" value="0"/>
                     <Property name="focusBehavior" type="org.jdesktop.swingx.prompt.PromptSupport$FocusBehavior" editor="org.netbeans.modules.form.editors.EnumEditor">
@@ -368,17 +368,17 @@
             </Component>
             <Component class="javax.swing.JSeparator" name="jSeparator1">
             </Component>
-            <Component class="javax.swing.JButton" name="jButton3">
+            <Component class="javax.swing.JButton" name="btnRemover">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Limpar"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JButton" name="jButton4">
+            <Component class="javax.swing.JButton" name="btnCalcular">
               <Properties>
                 <Property name="text" type="java.lang.String" value="Calcular"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton4ActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCalcularActionPerformed"/>
               </Events>
             </Component>
           </SubComponents>

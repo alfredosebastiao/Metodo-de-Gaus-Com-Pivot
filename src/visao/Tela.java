@@ -5,6 +5,9 @@
  */
 package visao;
 
+import controlo.Controle;
+import java.util.ArrayList;
+
 /**
  *
  * @author User
@@ -29,7 +32,7 @@ public class Tela extends javax.swing.JFrame {
 
         pnPrincipal = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        tfB3 = new javax.swing.JPanel();
+        pnEquacao = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         tfX11 = new org.jdesktop.swingx.JXTextField();
         tfX12 = new org.jdesktop.swingx.JXTextField();
@@ -45,12 +48,12 @@ public class Tela extends javax.swing.JFrame {
         tfX32 = new org.jdesktop.swingx.JXTextField();
         tfX33 = new org.jdesktop.swingx.JXTextField();
         jLabel4 = new javax.swing.JLabel();
-        jXTextField12 = new org.jdesktop.swingx.JXTextField();
+        tfB3 = new org.jdesktop.swingx.JXTextField();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JSeparator();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        btnRemover = new javax.swing.JButton();
+        btnCalcular = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jSeparator2 = new javax.swing.JSeparator();
         jButton7 = new javax.swing.JButton();
@@ -63,7 +66,7 @@ public class Tela extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jLabel1.setText("Resolucao de Sistemas de equacao pelo Metodo de Gaus Com pivot");
 
-        tfB3.setBorder(javax.swing.BorderFactory.createTitledBorder("Equacao"));
+        pnEquacao.setBorder(javax.swing.BorderFactory.createTitledBorder("Equacao"));
 
         jPanel2.setLayout(new java.awt.GridLayout(3, 4, 10, 10));
 
@@ -166,12 +169,12 @@ public class Tela extends javax.swing.JFrame {
         jLabel4.setText("=");
         jPanel2.add(jLabel4);
 
-        jXTextField12.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        jXTextField12.setFocusBehavior(org.jdesktop.swingx.prompt.PromptSupport.FocusBehavior.SHOW_PROMPT);
-        jXTextField12.setMinimumSize(new java.awt.Dimension(50, 50));
-        jXTextField12.setPreferredSize(new java.awt.Dimension(50, 50));
-        jXTextField12.setPrompt("b3");
-        jPanel2.add(jXTextField12);
+        tfB3.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        tfB3.setFocusBehavior(org.jdesktop.swingx.prompt.PromptSupport.FocusBehavior.SHOW_PROMPT);
+        tfB3.setMinimumSize(new java.awt.Dimension(50, 50));
+        tfB3.setPreferredSize(new java.awt.Dimension(50, 50));
+        tfB3.setPrompt("b3");
+        jPanel2.add(tfB3);
 
         jButton1.setText("Adicionar variavel");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -182,51 +185,51 @@ public class Tela extends javax.swing.JFrame {
 
         jButton2.setText("Remover variavel");
 
-        jButton3.setText("Limpar");
+        btnRemover.setText("Limpar");
 
-        jButton4.setText("Calcular");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
+        btnCalcular.setText("Calcular");
+        btnCalcular.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
+                btnCalcularActionPerformed(evt);
             }
         });
 
-        javax.swing.GroupLayout tfB3Layout = new javax.swing.GroupLayout(tfB3);
-        tfB3.setLayout(tfB3Layout);
-        tfB3Layout.setHorizontalGroup(
-            tfB3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout pnEquacaoLayout = new javax.swing.GroupLayout(pnEquacao);
+        pnEquacao.setLayout(pnEquacaoLayout);
+        pnEquacaoLayout.setHorizontalGroup(
+            pnEquacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jSeparator1, javax.swing.GroupLayout.Alignment.TRAILING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, tfB3Layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnEquacaoLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(tfB3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, tfB3Layout.createSequentialGroup()
+                .addGroup(pnEquacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnEquacaoLayout.createSequentialGroup()
                         .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 272, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 127, Short.MAX_VALUE)
-                        .addGroup(tfB3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(pnEquacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, tfB3Layout.createSequentialGroup()
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnEquacaoLayout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnRemover, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(btnCalcular, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
-        tfB3Layout.setVerticalGroup(
-            tfB3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(tfB3Layout.createSequentialGroup()
-                .addGroup(tfB3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        pnEquacaoLayout.setVerticalGroup(
+            pnEquacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnEquacaoLayout.createSequentialGroup()
+                .addGroup(pnEquacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(tfB3Layout.createSequentialGroup()
+                    .addGroup(pnEquacaoLayout.createSequentialGroup()
                         .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(10, 10, 10)
-                .addGroup(tfB3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(pnEquacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnRemover, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnCalcular, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
 
@@ -285,7 +288,7 @@ public class Tela extends javax.swing.JFrame {
             pnPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnPrincipalLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(tfB3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(pnEquacao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
@@ -301,7 +304,7 @@ public class Tela extends javax.swing.JFrame {
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(pnPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(tfB3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(pnEquacao, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -331,9 +334,9 @@ public class Tela extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+    private void btnCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalcularActionPerformed
         this.preencherArrayDeValores();
-    }//GEN-LAST:event_jButton4ActionPerformed
+    }//GEN-LAST:event_btnCalcularActionPerformed
 
     private void tfX13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfX13ActionPerformed
         // TODO add your handling code here:
@@ -375,10 +378,10 @@ public class Tela extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnCalcular;
+    private javax.swing.JButton btnRemover;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
     private javax.swing.JLabel jLabel1;
@@ -391,10 +394,10 @@ public class Tela extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JTable jTable1;
-    private org.jdesktop.swingx.JXTextField jXTextField12;
+    private javax.swing.JPanel pnEquacao;
     private javax.swing.JPanel pnPrincipal;
     private org.jdesktop.swingx.JXTextField tfB1;
-    private javax.swing.JPanel tfB3;
+    private org.jdesktop.swingx.JXTextField tfB3;
     private org.jdesktop.swingx.JXTextField tfX11;
     private org.jdesktop.swingx.JXTextField tfX12;
     private org.jdesktop.swingx.JXTextField tfX13;
@@ -407,7 +410,37 @@ public class Tela extends javax.swing.JFrame {
     private org.jdesktop.swingx.JXTextField tfXB2;
     // End of variables declaration//GEN-END:variables
 
+    private ArrayList<ArrayList<Double>> matriz = new ArrayList();
+    private ArrayList<Double> cadaLinha = new ArrayList();
+    private Controle controle= new Controle();
+    /**
+     * Metodo usado para buscar os valor introduzidos
+     */
     private void preencherArrayDeValores() {
+              cadaLinha = new ArrayList<>();
+        cadaLinha.add(Double.parseDouble(tfX11.getText()));
+        cadaLinha.add(Double.parseDouble(tfX12.getText()));
+        cadaLinha.add(Double.parseDouble(tfX13.getText()));
+        cadaLinha.add(Double.parseDouble(tfB1.getText()));
+        matriz.add(cadaLinha);
         
+        
+        cadaLinha = new ArrayList<>();
+        cadaLinha.add(Double.parseDouble(tfX21.getText()));
+        cadaLinha.add(Double.parseDouble(tfX22.getText()));
+        cadaLinha.add(Double.parseDouble(tfX23.getText()));
+        cadaLinha.add(Double.parseDouble(tfXB2.getText()));
+        matriz.add(cadaLinha);
+        
+        
+        
+        cadaLinha = new ArrayList<>();
+        cadaLinha.add(Double.parseDouble(tfX31.getText()));
+        cadaLinha.add(Double.parseDouble(tfX32.getText()));
+        cadaLinha.add(Double.parseDouble(tfX33.getText()));
+        cadaLinha.add(Double.parseDouble(tfB3.getText()));
+        matriz.add(cadaLinha);
+        
+        controle.receberMatriz(matriz, cadaLinha);
     }
 }

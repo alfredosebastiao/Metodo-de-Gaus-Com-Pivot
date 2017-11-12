@@ -3,7 +3,7 @@ package controlo;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
-import javax.swing.JOptionPane;
+
 
 /**
  *
@@ -107,7 +107,7 @@ public class Controle {
                        
             somaDosAnteriores = matriz.get(i).get(this.numeroDeVariaveis);
 
-            for(int j = 2; j >= 0; j--){
+            for(int j = this.numeroDeVariaveis-1; j >= 0; j--){
               
                 
                if(i == j){

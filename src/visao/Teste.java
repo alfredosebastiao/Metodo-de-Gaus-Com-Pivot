@@ -6,7 +6,6 @@
 package visao;
 import controlo.Controle;
 import java.util.ArrayList;
-import javax.swing.JOptionPane;
 /**
  *
  * @author User

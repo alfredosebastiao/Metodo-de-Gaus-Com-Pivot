@@ -7,6 +7,8 @@ package visao;
 
 import controlo.Controle;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  *
@@ -56,10 +58,10 @@ public class Tela extends javax.swing.JFrame {
         btnCalcular = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jSeparator2 = new javax.swing.JSeparator();
-        jButton7 = new javax.swing.JButton();
-        jButton8 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         tabela = new javax.swing.JTable();
+        jLabel6 = new javax.swing.JLabel();
+        lbResultado = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -235,10 +237,6 @@ public class Tela extends javax.swing.JFrame {
 
         jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder("Resultado"));
 
-        jButton7.setText("Limpar");
-
-        jButton8.setText("Calcular");
-
         tabela.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -252,6 +250,12 @@ public class Tela extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(tabela);
 
+        jLabel6.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        jLabel6.setText("Solucao:");
+
+        lbResultado.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        lbResultado.setText("result");
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
@@ -260,26 +264,26 @@ public class Tela extends javax.swing.JFrame {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 782, Short.MAX_VALUE))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 782, Short.MAX_VALUE)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(jLabel6)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(lbResultado)
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 523, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 530, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(10, 10, 10)
+                .addGap(19, 19, 19)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap())
+                    .addComponent(jLabel6)
+                    .addComponent(lbResultado))
+                .addGap(29, 29, 29))
         );
 
         javax.swing.GroupLayout pnPrincipalLayout = new javax.swing.GroupLayout(pnPrincipal);
@@ -382,17 +386,17 @@ public class Tela extends javax.swing.JFrame {
     private javax.swing.JButton btnRemover;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton7;
-    private javax.swing.JButton jButton8;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
+    private javax.swing.JLabel lbResultado;
     private javax.swing.JPanel pnEquacao;
     private javax.swing.JPanel pnPrincipal;
     private javax.swing.JTable tabela;
@@ -413,6 +417,8 @@ public class Tela extends javax.swing.JFrame {
     private ArrayList<ArrayList<Double>> matriz = new ArrayList();
     private ArrayList<Double> cadaLinha = new ArrayList();
     private Controle controle= new Controle();
+    
+    private Map<String,Double> mapaDeResultados = new HashMap();
     /**
      * Metodo usado para buscar os valor introduzidos
      */
@@ -430,6 +436,7 @@ public class Tela extends javax.swing.JFrame {
         cadaLinha.add(Double.parseDouble(tfX22.getText()));
         cadaLinha.add(Double.parseDouble(tfX23.getText()));
         cadaLinha.add(Double.parseDouble(tfXB2.getText()));
+    
         matriz.add(cadaLinha);
         
         
@@ -441,9 +448,9 @@ public class Tela extends javax.swing.JFrame {
         cadaLinha.add(Double.parseDouble(tfB3.getText()));
         matriz.add(cadaLinha);
         
-        controle.receberMatriz(matriz, tabela);
-        
-        
+       this.mapaDeResultados = this.controle.receberMatriz(matriz, tabela);
+      //  controle.preencherTabela(matriz, tabela);
+        lbResultado.setText(this.mapaDeResultados.toString());
     }
     
     

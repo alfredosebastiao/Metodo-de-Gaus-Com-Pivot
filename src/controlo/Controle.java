@@ -3,6 +3,7 @@ package controlo;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import modelo.ModeloDaTabela;
 
@@ -16,27 +17,34 @@ import modelo.ModeloDaTabela;
 public class Controle {
     ArrayList<ArrayList<Double>> matriz;
     ArrayList<ArrayList<Double>> matrizEscalonada;
+    ArrayList<ArrayList<Double>> matrizParaTabela;
     int numeroDeVariaveis = 3;
+
+   
     
     
-    public void receberMatriz(ArrayList<ArrayList<Double>> matriz,JTable table){
+    
+    public Map<String,Double> receberMatriz(ArrayList<ArrayList<Double>> matriz,JTable table){
         this.matriz = new ArrayList<>();
+        this.matrizParaTabela = new ArrayList<>();
         this.matriz = matriz;
         this.numeroDeVariaveis = this.matriz.size();
-        System.out.println("matriz original");
-        this.imprimirMatriz(matriz);
         
-        this.preencherTabela(matriz, table);
+//        for(int i = 0; i < this.matriz.size(); i++){
+//            matrizParaTabela.add(matriz.get(i));
+//        }
+         this.preencherTabela(this.matriz, table);
+        //this.matrizParaTabela.addAll(matriz);
+        
+        //this.imprimirMatrizA(matrizParaTabela);
         for(int i = 0; i < this.numeroDeVariaveis; i++){
-            
             this.matriz = retornarMatrizComPivot(this.matriz, i);
         }
+
+        //this.preencherTabela(this.matrizParaTabela, table);
+       
         
-        System.out.println("Ultima impressao");
-        this.imprimirMatriz(this.matriz);
-        
-        System.out.println("RESULT");
-        System.out.println(this.retornarResultados(matriz).toString());
+        return  this.retornarResultados(matriz);
         
         
     }
@@ -48,10 +56,9 @@ public class Controle {
         auxParaTroca = matriz.get(coluna);
         matriz.set(coluna, matriz.get(linhaDoPivot));
         matriz.set(linhaDoPivot, auxParaTroca);
-         System.out.println("pivot passa para cima");
-        imprimirMatriz(matriz);
+        
         return retornarZeroAbaixo(matriz, coluna);
-       // return null;
+    
     }
     
     
@@ -70,20 +77,22 @@ public class Controle {
     
     public ArrayList<ArrayList<Double>> retornarZeroAbaixo(ArrayList<ArrayList<Double>> matriz,int coluna){
         ArrayList<Double> auxMultiplicado;
+        
         for(int i = coluna+1; i < this.numeroDeVariaveis; i++ ){
             auxMultiplicado  = new ArrayList();
             double multiplicador = this.retornarMuliplicadorDaLinha(matriz,coluna, i);
-            System.out.println("multiplicador: "+multiplicador);
+    
             for(int j = 0; j <= this.numeroDeVariaveis; j++){    
                
                 auxMultiplicado.add(matriz.get(i).get(j) - multiplicador*matriz.get(coluna).get(j));   
             }
-            System.out.println(auxMultiplicado.toString());
+           
             matriz.set(i, auxMultiplicado);
              
         }
         
-        System.out.println("linha multiplicada!!");
+        
+    // this.matrizParaTabela.addAll(matriz);
         this.imprimirMatriz(matriz);
         return matriz;
     }
@@ -101,6 +110,18 @@ public class Controle {
             System.out.println("");
         }
         System.out.println("==============================================");
+        
+    }
+    
+    private void imprimirMatrizA(ArrayList<ArrayList> matriz){
+        System.out.println("=aaaaaaaaaaaaaaaaa=============================================");
+        for(int i=0;i < this.numeroDeVariaveis; i++){
+            for(int j=0;j <= this.numeroDeVariaveis; j++){
+                System.out.print(matriz.get(i).get(j)+ " | ");
+            }
+            System.out.println("");
+        }
+        System.out.println("===aaaaaaaaaaaa===========================================");
         
     }
     
@@ -134,7 +155,7 @@ public class Controle {
     }
     
     private ModeloDaTabela modeloDaTabela;
-    private JTable preencherTabela(ArrayList<ArrayList<Double>> matriz, JTable tabela){
+    public JTable preencherTabela(ArrayList matriz, JTable tabela){
         modeloDaTabela = new ModeloDaTabela(matriz);
         tabela.setModel(modeloDaTabela);
         tabela.revalidate();

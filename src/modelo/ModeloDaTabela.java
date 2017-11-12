@@ -14,13 +14,11 @@ import javax.swing.table.AbstractTableModel;
  * @author User
  */
 public class ModeloDaTabela extends AbstractTableModel {
-    private ArrayList<Double> cadaLinha = new ArrayList();
-    private ArrayList<ArrayList<Double>>  matriz = new ArrayList();
+    private ArrayList cadaLinha = new ArrayList();
+    private ArrayList  matriz = new ArrayList();
     String[] colunas =  {"X1" ,"X2","X3","Bi","equacao","Pivot",};
-    public ModeloDaTabela( ArrayList<ArrayList<Double>> matriz) {
+    public ModeloDaTabela( ArrayList matriz) {
         setMatriz(matriz);
-         
-      
     }
 
     public ModeloDaTabela() {
@@ -61,7 +59,7 @@ public class ModeloDaTabela extends AbstractTableModel {
          
     
         
-        cadaLinha = matriz.get(rowIndex);
+        cadaLinha = (ArrayList)matriz.get(rowIndex);
       
        
        
@@ -71,8 +69,8 @@ public class ModeloDaTabela extends AbstractTableModel {
             case 1: return cadaLinha.get(1);
             case 2: return cadaLinha.get(2);
             case 3: return cadaLinha.get(3);
-            case 4: return "------------";
-            case 5: return "------------";
+            case 4: return cadaLinha.size();
+            case 5: return "----------";
         }
         
        
@@ -93,7 +91,7 @@ public class ModeloDaTabela extends AbstractTableModel {
         return matriz;
     }
 
-    public void setMatriz( ArrayList<ArrayList<Double>> matriz) {
+    public void setMatriz( ArrayList matriz) {
         this.matriz = matriz;
         
     }

@@ -16,6 +16,7 @@ public class Controle {
     ArrayList<ArrayList<Double>> matrizEscalonada;
     int numeroDeVariaveis = 3;
     
+    
     public void receberMatriz(ArrayList<ArrayList<Double>> matriz, ArrayList<Double> Results){
         this.matriz = new ArrayList<>();
         this.matriz = matriz;

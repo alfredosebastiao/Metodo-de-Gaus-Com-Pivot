@@ -48,6 +48,15 @@ public class Tela extends javax.swing.JFrame {
         jXTextField12 = new org.jdesktop.swingx.JXTextField();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
+        jSeparator1 = new javax.swing.JSeparator();
+        jButton3 = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
+        jPanel3 = new javax.swing.JPanel();
+        jSeparator2 = new javax.swing.JSeparator();
+        jButton7 = new javax.swing.JButton();
+        jButton8 = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -59,6 +68,7 @@ public class Tela extends javax.swing.JFrame {
         jPanel2.setLayout(new java.awt.GridLayout(3, 4, 10, 10));
 
         jXTextField1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jXTextField1.setFocusBehavior(org.jdesktop.swingx.prompt.PromptSupport.FocusBehavior.SHOW_PROMPT);
         jXTextField1.setMinimumSize(new java.awt.Dimension(50, 50));
         jXTextField1.setPreferredSize(new java.awt.Dimension(50, 50));
         jXTextField1.setPrompt("x11");
@@ -70,12 +80,14 @@ public class Tela extends javax.swing.JFrame {
         jPanel2.add(jXTextField1);
 
         jXTextField2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jXTextField2.setFocusBehavior(org.jdesktop.swingx.prompt.PromptSupport.FocusBehavior.SHOW_PROMPT);
         jXTextField2.setMinimumSize(new java.awt.Dimension(50, 50));
         jXTextField2.setPreferredSize(new java.awt.Dimension(50, 50));
         jXTextField2.setPrompt("x12");
         jPanel2.add(jXTextField2);
 
         jXTextField3.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jXTextField3.setFocusBehavior(org.jdesktop.swingx.prompt.PromptSupport.FocusBehavior.SHOW_PROMPT);
         jXTextField3.setMinimumSize(new java.awt.Dimension(50, 50));
         jXTextField3.setPreferredSize(new java.awt.Dimension(50, 50));
         jXTextField3.setPrompt("x13");
@@ -86,24 +98,28 @@ public class Tela extends javax.swing.JFrame {
         jPanel2.add(jLabel2);
 
         jXTextField4.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jXTextField4.setFocusBehavior(org.jdesktop.swingx.prompt.PromptSupport.FocusBehavior.SHOW_PROMPT);
         jXTextField4.setMinimumSize(new java.awt.Dimension(50, 50));
         jXTextField4.setPreferredSize(new java.awt.Dimension(50, 50));
         jXTextField4.setPrompt("b1");
         jPanel2.add(jXTextField4);
 
         jXTextField5.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jXTextField5.setFocusBehavior(org.jdesktop.swingx.prompt.PromptSupport.FocusBehavior.SHOW_PROMPT);
         jXTextField5.setMinimumSize(new java.awt.Dimension(50, 50));
         jXTextField5.setPreferredSize(new java.awt.Dimension(50, 50));
         jXTextField5.setPrompt("x21");
         jPanel2.add(jXTextField5);
 
         jXTextField6.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jXTextField6.setFocusBehavior(org.jdesktop.swingx.prompt.PromptSupport.FocusBehavior.SHOW_PROMPT);
         jXTextField6.setMinimumSize(new java.awt.Dimension(50, 50));
         jXTextField6.setPreferredSize(new java.awt.Dimension(50, 50));
         jXTextField6.setPrompt("x22");
         jPanel2.add(jXTextField6);
 
         jXTextField7.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jXTextField7.setFocusBehavior(org.jdesktop.swingx.prompt.PromptSupport.FocusBehavior.SHOW_PROMPT);
         jXTextField7.setMinimumSize(new java.awt.Dimension(50, 50));
         jXTextField7.setPreferredSize(new java.awt.Dimension(50, 50));
         jXTextField7.setPrompt("x23");
@@ -114,24 +130,28 @@ public class Tela extends javax.swing.JFrame {
         jPanel2.add(jLabel3);
 
         jXTextField8.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jXTextField8.setFocusBehavior(org.jdesktop.swingx.prompt.PromptSupport.FocusBehavior.SHOW_PROMPT);
         jXTextField8.setMinimumSize(new java.awt.Dimension(50, 50));
         jXTextField8.setPreferredSize(new java.awt.Dimension(50, 50));
         jXTextField8.setPrompt("b2");
         jPanel2.add(jXTextField8);
 
         jXTextField9.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jXTextField9.setFocusBehavior(org.jdesktop.swingx.prompt.PromptSupport.FocusBehavior.SHOW_PROMPT);
         jXTextField9.setMinimumSize(new java.awt.Dimension(50, 50));
         jXTextField9.setPreferredSize(new java.awt.Dimension(50, 50));
         jXTextField9.setPrompt("x31");
         jPanel2.add(jXTextField9);
 
         jXTextField10.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jXTextField10.setFocusBehavior(org.jdesktop.swingx.prompt.PromptSupport.FocusBehavior.SHOW_PROMPT);
         jXTextField10.setMinimumSize(new java.awt.Dimension(50, 50));
         jXTextField10.setPreferredSize(new java.awt.Dimension(50, 50));
         jXTextField10.setPrompt("x32");
         jPanel2.add(jXTextField10);
 
         jXTextField11.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jXTextField11.setFocusBehavior(org.jdesktop.swingx.prompt.PromptSupport.FocusBehavior.SHOW_PROMPT);
         jXTextField11.setMinimumSize(new java.awt.Dimension(50, 50));
         jXTextField11.setPreferredSize(new java.awt.Dimension(50, 50));
         jXTextField11.setPrompt("x33");
@@ -142,6 +162,7 @@ public class Tela extends javax.swing.JFrame {
         jPanel2.add(jLabel4);
 
         jXTextField12.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jXTextField12.setFocusBehavior(org.jdesktop.swingx.prompt.PromptSupport.FocusBehavior.SHOW_PROMPT);
         jXTextField12.setMinimumSize(new java.awt.Dimension(50, 50));
         jXTextField12.setPreferredSize(new java.awt.Dimension(50, 50));
         jXTextField12.setPrompt("b3");
@@ -156,43 +177,112 @@ public class Tela extends javax.swing.JFrame {
 
         jButton2.setText("Remover variavel");
 
+        jButton3.setText("Limpar");
+
+        jButton4.setText("Calcular");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+            .addComponent(jSeparator1, javax.swing.GroupLayout.Alignment.TRAILING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 272, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 45, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, 272, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 127, Short.MAX_VALUE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 373, Short.MAX_VALUE))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(10, 10, 10)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
+        );
+
+        jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder("Resultado"));
+
+        jButton7.setText("Limpar");
+
+        jButton8.setText("Calcular");
+
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane1.setViewportView(jTable1);
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jSeparator2, javax.swing.GroupLayout.Alignment.TRAILING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 782, Short.MAX_VALUE))
+                .addContainerGap())
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 523, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(10, 10, 10)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout pnPrincipalLayout = new javax.swing.GroupLayout(pnPrincipal);
         pnPrincipal.setLayout(pnPrincipalLayout);
         pnPrincipalLayout.setHorizontalGroup(
             pnPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnPrincipalLayout.createSequentialGroup()
-                .addContainerGap(197, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addGap(149, 149, 149))
             .addGroup(pnPrincipalLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnPrincipalLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel1)
+                .addGap(316, 316, 316))
         );
         pnPrincipalLayout.setVerticalGroup(
             pnPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -200,8 +290,10 @@ public class Tela extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(291, Short.MAX_VALUE))
+                .addGroup(pnPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -212,7 +304,9 @@ public class Tela extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(pnPrincipal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(pnPrincipal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
@@ -265,12 +359,21 @@ public class Tela extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton7;
+    private javax.swing.JButton jButton8;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JSeparator jSeparator2;
+    private javax.swing.JTable jTable1;
     private org.jdesktop.swingx.JXTextField jXTextField1;
     private org.jdesktop.swingx.JXTextField jXTextField10;
     private org.jdesktop.swingx.JXTextField jXTextField11;

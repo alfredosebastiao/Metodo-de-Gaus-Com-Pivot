@@ -9,6 +9,9 @@ import controlo.Controle;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
+import javax.swing.JOptionPane;
+import javax.swing.JTable;
+import modelo.ModeloDaTabela;
 
 /**
  *
@@ -58,10 +61,10 @@ public class Tela extends javax.swing.JFrame {
         btnCalcular = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jSeparator2 = new javax.swing.JSeparator();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        tabela = new javax.swing.JTable();
         jLabel6 = new javax.swing.JLabel();
         lbResultado = new javax.swing.JLabel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -226,7 +229,7 @@ public class Tela extends javax.swing.JFrame {
                         .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 383, Short.MAX_VALUE)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(10, 10, 10)
                 .addGroup(pnEquacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -237,24 +240,16 @@ public class Tela extends javax.swing.JFrame {
 
         jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder("Resultado"));
 
-        tabela.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ));
-        jScrollPane1.setViewportView(tabela);
-
         jLabel6.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jLabel6.setText("Solucao:");
 
         lbResultado.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         lbResultado.setText("result");
+
+        jTextArea1.setEditable(false);
+        jTextArea1.setColumns(20);
+        jTextArea1.setRows(5);
+        jScrollPane2.setViewportView(jTextArea1);
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -264,19 +259,19 @@ public class Tela extends javax.swing.JFrame {
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 782, Short.MAX_VALUE)
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addComponent(jLabel6)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(lbResultado)
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(jScrollPane2))
                 .addContainerGap())
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 530, Short.MAX_VALUE)
+                .addComponent(jScrollPane2)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(19, 19, 19)
@@ -297,7 +292,7 @@ public class Tela extends javax.swing.JFrame {
                 .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnPrincipalLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(362, Short.MAX_VALUE)
                 .addComponent(jLabel1)
                 .addGap(316, 316, 316))
         );
@@ -393,13 +388,13 @@ public class Tela extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
+    private javax.swing.JTextArea jTextArea1;
     private javax.swing.JLabel lbResultado;
     private javax.swing.JPanel pnEquacao;
     private javax.swing.JPanel pnPrincipal;
-    private javax.swing.JTable tabela;
     private org.jdesktop.swingx.JXTextField tfB1;
     private org.jdesktop.swingx.JXTextField tfB3;
     private org.jdesktop.swingx.JXTextField tfX11;
@@ -447,11 +442,31 @@ public class Tela extends javax.swing.JFrame {
         cadaLinha.add(Double.parseDouble(tfX33.getText()));
         cadaLinha.add(Double.parseDouble(tfB3.getText()));
         matriz.add(cadaLinha);
+        // this.preencherTabela(matriz);
+       this.mapaDeResultados = this.controle.receberMatriz(matriz);
+       // controle.preencherTabela(matriz, tabela);
+      //  lbResultado.setText(this.mapaDeResultados.toString());
+        this.controle.imprimirNaTA(jTextArea1);
         
-       this.mapaDeResultados = this.controle.receberMatriz(matriz, tabela);
-      //  controle.preencherTabela(matriz, tabela);
-        lbResultado.setText(this.mapaDeResultados.toString());
+      // this.preencherTabela(matriz);
     }
+    
+    
+    ModeloDaTabela modeloDaTabela;
+//    public void preencherTabela(ArrayList<ArrayList<Double>> matriz){
+//        for(int i=0;i < 3; i++){
+//            for(int j=0;j <= 3; j++){
+//                JOptionPane.showMessageDialog(this, matriz.get(i).get(j));
+//               // System.out.print(matriz.get(i).get(j)+ " | ");
+//            }
+//          
+//            System.out.println("");
+//        }
+//        modeloDaTabela = new ModeloDaTabela(matriz);
+//        this.tabela.setModel(modeloDaTabela);
+//        this.tabela.revalidate();
+//        
+//    }
     
     
 }

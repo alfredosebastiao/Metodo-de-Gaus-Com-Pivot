@@ -5,6 +5,7 @@ import java.util.HashMap;
 import java.util.Map;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
+import javax.swing.JTextArea;
 import modelo.ModeloDaTabela;
 
 
@@ -15,32 +16,32 @@ import modelo.ModeloDaTabela;
  * @version 1.0
  */
 public class Controle {
-    ArrayList<ArrayList<Double>> matriz;
-    ArrayList<ArrayList<Double>> matrizEscalonada;
-    ArrayList<ArrayList<Double>> matrizParaTabela;
+    private ArrayList<ArrayList<Double>> matriz;
+    private ArrayList<ArrayList<Double>> matrizEscalonada;
+    private ArrayList<ArrayList<Double>> matrizParaTabela;
     int numeroDeVariaveis = 3;
-
+    String textoAImprimir = "X1 \t| X2 \t| X3 \t| BI \t| Equacao\t|\n";
    
     
     
     
-    public Map<String,Double> receberMatriz(ArrayList<ArrayList<Double>> matriz,JTable table){
+    public Map<String,Double> receberMatriz(ArrayList<ArrayList<Double>> matriz){
         this.matriz = new ArrayList<>();
         this.matrizParaTabela = new ArrayList<>();
         this.matriz = matriz;
         this.numeroDeVariaveis = this.matriz.size();
-        
+   //     this.preencherTabela(matriz, table);
 //        for(int j =0; j < this.numeroDeVariaveis; j++){
 //            this.matrizParaTabela.add(matriz.get(j));
 //        }
-        this.matrizParaTabela.addAll(matriz);
-        //this.imprimirMatrizA(matrizParaTabela);
+//        this.matrizParaTabela.addAll(matriz);
+        this.imprimirMatriz(matriz);
         
         for(int i = 0; i < this.numeroDeVariaveis; i++){
             this.matriz = retornarMatrizComPivot(this.matriz, i);
         }
 
-        this.preencherTabela(this.matrizParaTabela, table);
+       // this.preencherTabela(this.matrizParaTabela, table);
        
         
         return  this.retornarResultados(matriz);
@@ -105,10 +106,13 @@ public class Controle {
         
         for(int i=0;i < this.numeroDeVariaveis; i++){
             for(int j=0;j <= this.numeroDeVariaveis; j++){
+                this.textoAImprimir += String.format("%.2f",matriz.get(i).get(j))+ " \t| ";
                 System.out.print(matriz.get(i).get(j)+ " | ");
             }
+             this.textoAImprimir += "\n";
             System.out.println("");
         }
+        this.textoAImprimir += "================================================================================== \n";
         System.out.println("==============================================");
         
     }
@@ -117,8 +121,10 @@ public class Controle {
         System.out.println("=aaaaaaaaaaaaaaaaa=============================================");
         for(int i=0;i < this.numeroDeVariaveis; i++){
             for(int j=0;j <= this.numeroDeVariaveis; j++){
+                this.textoAImprimir += matriz.get(i).get(j)+ " | ";
                 System.out.print(matriz.get(i).get(j)+ " | ");
             }
+            this.textoAImprimir += this.textoAImprimir+"\n";
             System.out.println("");
         }
         System.out.println("===aaaaaaaaaaaa===========================================");
@@ -156,9 +162,16 @@ public class Controle {
     
     private ModeloDaTabela modeloDaTabela;
     public JTable preencherTabela(ArrayList matriz, JTable tabela){
+        JOptionPane.showMessageDialog(null,"fui chamado");
         modeloDaTabela = new ModeloDaTabela(matriz);
         tabela.setModel(modeloDaTabela);
         tabela.revalidate();
         return tabela;
+    }
+    
+    public JTextArea imprimirNaTA(JTextArea ta){
+       ta.setText(textoAImprimir);
+       
+       return ta;
     }
 }

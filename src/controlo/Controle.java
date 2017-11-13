@@ -30,18 +30,17 @@ public class Controle {
         this.matriz = matriz;
         this.numeroDeVariaveis = this.matriz.size();
         
-//        for(int i = 0; i < this.matriz.size(); i++){
-//            matrizParaTabela.add(matriz.get(i));
+//        for(int j =0; j < this.numeroDeVariaveis; j++){
+//            this.matrizParaTabela.add(matriz.get(j));
 //        }
-         this.preencherTabela(this.matriz, table);
-        //this.matrizParaTabela.addAll(matriz);
-        
+        this.matrizParaTabela.addAll(matriz);
         //this.imprimirMatrizA(matrizParaTabela);
+        
         for(int i = 0; i < this.numeroDeVariaveis; i++){
             this.matriz = retornarMatrizComPivot(this.matriz, i);
         }
 
-        //this.preencherTabela(this.matrizParaTabela, table);
+        this.preencherTabela(this.matrizParaTabela, table);
        
         
         return  this.retornarResultados(matriz);
@@ -91,8 +90,9 @@ public class Controle {
              
         }
         
+       
         
-    // this.matrizParaTabela.addAll(matriz);
+     this.matrizParaTabela.addAll(matriz);
         this.imprimirMatriz(matriz);
         return matriz;
     }

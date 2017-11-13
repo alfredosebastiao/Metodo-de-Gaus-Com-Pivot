@@ -18,7 +18,7 @@ public class ModeloDaTabela extends AbstractTableModel {
     private ArrayList  matriz = new ArrayList();
     String[] colunas =  {"X1" ,"X2","X3","Bi","equacao","Pivot",};
     public ModeloDaTabela( ArrayList matriz) {
-        setMatriz(matriz);
+        this.setMatriz(matriz);
     }
 
     public ModeloDaTabela() {
@@ -59,7 +59,7 @@ public class ModeloDaTabela extends AbstractTableModel {
          
     
         
-        cadaLinha = (ArrayList)matriz.get(rowIndex);
+        cadaLinha = (ArrayList) matriz.get(rowIndex);
       
        
        

@@ -418,20 +418,24 @@ public class Tela extends javax.swing.JFrame {
      * Metodo usado para buscar os valor introduzidos
      */
     private void preencherArrayDeValores() {
-              cadaLinha = new ArrayList<>();
+        cadaLinha = new ArrayList<>();
         cadaLinha.add(Double.parseDouble(tfX11.getText()));
         cadaLinha.add(Double.parseDouble(tfX12.getText()));
         cadaLinha.add(Double.parseDouble(tfX13.getText()));
         cadaLinha.add(Double.parseDouble(tfB1.getText()));
+        cadaLinha.add(0.0);
+        cadaLinha.add(0.0);
+        cadaLinha.add(0.0);
         matriz.add(cadaLinha);
-        
-        
+                
         cadaLinha = new ArrayList<>();
         cadaLinha.add(Double.parseDouble(tfX21.getText()));
         cadaLinha.add(Double.parseDouble(tfX22.getText()));
         cadaLinha.add(Double.parseDouble(tfX23.getText()));
         cadaLinha.add(Double.parseDouble(tfXB2.getText()));
-    
+        cadaLinha.add(0.0);
+        cadaLinha.add(0.0);
+        cadaLinha.add(0.0);
         matriz.add(cadaLinha);
         
         
@@ -441,11 +445,14 @@ public class Tela extends javax.swing.JFrame {
         cadaLinha.add(Double.parseDouble(tfX32.getText()));
         cadaLinha.add(Double.parseDouble(tfX33.getText()));
         cadaLinha.add(Double.parseDouble(tfB3.getText()));
+        cadaLinha.add(0.0);
+        cadaLinha.add(0.0);
+        cadaLinha.add(0.0);
         matriz.add(cadaLinha);
         // this.preencherTabela(matriz);
        this.mapaDeResultados = this.controle.receberMatriz(matriz);
        // controle.preencherTabela(matriz, tabela);
-      //  lbResultado.setText(this.mapaDeResultados.toString());
+        lbResultado.setText(this.mapaDeResultados.toString());
         this.controle.imprimirNaTA(jTextArea1);
         
       // this.preencherTabela(matriz);

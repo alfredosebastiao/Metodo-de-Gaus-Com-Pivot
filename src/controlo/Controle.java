@@ -86,7 +86,9 @@ public class Controle {
                
                 auxMultiplicado.add(matriz.get(i).get(j) - multiplicador*matriz.get(coluna).get(j));   
             }
-           
+            auxMultiplicado.add(coluna+0.0);
+            auxMultiplicado.add(multiplicador+0.0);
+            auxMultiplicado.add(i+0.0);
             matriz.set(i, auxMultiplicado);
              
         }
@@ -109,7 +111,9 @@ public class Controle {
                 this.textoAImprimir += String.format("%.2f",matriz.get(i).get(j))+ " \t| ";
                 System.out.print(matriz.get(i).get(j)+ " | ");
             }
-             this.textoAImprimir += "\n";
+            this.textoAImprimir += "L"+matriz.get(i).get(this.numeroDeVariaveis-1)+" = L"+matriz.get(i).get(this.numeroDeVariaveis-1)
+                    +" + ("+this.matriz.get(i).get(this.numeroDeVariaveis-2)+") * L"+matriz.get(i).get(this.numeroDeVariaveis-3);
+            this.textoAImprimir += "\n";
             System.out.println("");
         }
         this.textoAImprimir += "================================================================================== \n";

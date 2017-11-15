@@ -439,6 +439,9 @@ public class Tela extends javax.swing.JFrame {
     private Controle controle = new Controle();
     private int numeroDeVar = 3;
     private Map<String, Double> mapaDeResultados = new HashMap();
+    /**
+     * Variavel usada para verificar se o nr de variaveis foi ou nao mexido
+     */
     private boolean mexido = false;
     /**
      * Metodo usado para buscar os valor introduzidos
@@ -473,23 +476,22 @@ public class Tela extends javax.swing.JFrame {
         cadaLinha.add(0.0);
         cadaLinha.add(0.0);
         matriz.add(cadaLinha);
-        // this.preencherTabela(matriz);
+        
         this.mapaDeResultados = this.controle.receberMatriz(matriz);
-        // controle.preencherTabela(matriz, tabela);
         lbResultado.setText(this.mapaDeResultados.toString());
         this.controle.imprimirNaTA(jTextArea1);
 
-        // this.preencherTabela(matriz);
     }
     
-    
+    /**
+     * Metodo usado para pegar os valores do arrayPreenchidoo apos adicionar ou remover variavel
+     */
     private void pegarValuesDoArray() {
         cadaLinha = new ArrayList<>();
         matriz = new ArrayList<>();
         mapaDeResultados = new HashMap();
         int cont = 0;
         
-      //  JOptionPane.showMessageDialog(null, componentes.size());
         for(int i = 0; i < this.numeroDeVar; i++){
             for(int j = 0; j <= this.numeroDeVar;j++){
                 JXTextField t = (JXTextField) componentes.get(cont);
@@ -504,13 +506,11 @@ public class Tela extends javax.swing.JFrame {
            
         }
         this.mapaDeResultados = this.controle.receberMatriz(matriz);
-        // controle.preencherTabela(matriz, tabela);
         lbResultado.setText(this.mapaDeResultados.toString());
         this.controle.imprimirNaTA(jTextArea1);
 
         
     }
-    ModeloDaTabela modeloDaTabela;
 
     /**
      * Metoodo usado para acrescentar o nr de variaveis, aumentando assim o

@@ -23,19 +23,19 @@ public class Controle {
     String textoAImprimir = "";
    
     
-    
-    
+    /**
+     *  Metodo usado para receber a matriz q sera calculada
+     * @param matriz  - matriz a calcuar
+     * @return Map<String, Double> map de resultados
+     */
     public Map<String,Double> receberMatriz(ArrayList<ArrayList<Double>> matriz){
         this.matriz = new ArrayList<>();
         this.matrizParaTabela = new ArrayList<>();
         this.matriz = matriz;
         this.numeroDeVariaveis = this.matriz.size();
-   //     this.preencherTabela(matriz, table);
-//        for(int j =0; j < this.numeroDeVariaveis; j++){
-//            this.matrizParaTabela.add(matriz.get(j));
-//        }
-//        this.matrizParaTabela.addAll(matriz);
-        this.prencherVarsNaList();
+        
+        
+        this.preencherVarsNaList();
         this.imprimirMatriz(matriz);
         
         
@@ -43,15 +43,16 @@ public class Controle {
         for(int i = 0; i < this.numeroDeVariaveis; i++){
             this.matriz = retornarMatrizComPivot(this.matriz, i);
         }
-
-       // this.preencherTabela(this.matrizParaTabela, table);
-       
-        
+     
         return  this.retornarResultados(matriz);
-        
-        
     }
     
+    /**
+     * Metodo usado para pegar pegar a linha linha do pivot e de seguida fazer a permutacao de linhas! colocando acima a linha do pivot
+     * @param matriz - matriz dos valores
+     * @param coluna - coluna com a qual estamos a trabalhar
+     * @return matriz com zeros abaixo do pivot
+     */
     public ArrayList<ArrayList<Double>> retornarMatrizComPivot(ArrayList<ArrayList<Double>> matriz,int coluna){
         int linhaDoPivot = this.retornarLinhaDoPivot(matriz, coluna);
         
@@ -60,13 +61,22 @@ public class Controle {
         matriz.set(coluna, matriz.get(linhaDoPivot));
         matriz.set(linhaDoPivot, auxParaTroca);
         
+        /**
+         * Para q possa imprimir a matriz depois de fazer a permutacao de linhas
+         */
         this.imprimirMatriz(matriz);
         
         return retornarZeroAbaixo(matriz, coluna);
-    
     }
     
     
+    /**
+     * Metodo usado para achar a linha do pivot! para de seguida fazer  a permutacao no metodo retornarMatrizComPivot()
+     * @param matriz - matriz onde deve encontrar o pivot
+     * @param coluna - coluna com a qual estamos a trabalhar
+     * @return 
+     * @see retornarMatrizComPivot()
+     */
     public int retornarLinhaDoPivot(ArrayList<ArrayList<Double>> matriz,int coluna){
         int linha = 0;
         double maior = 0;
@@ -80,6 +90,12 @@ public class Controle {
         return linha;
     }
     
+    /**
+     * Metodo usado para zerar as linhas abaixo do pivot
+     * @param matriz - matriz
+     * @param coluna - coluna com a qual estamos a trabalhar
+     * @return - matriz com zeros abaixo do pivot
+     */
     public ArrayList<ArrayList<Double>> retornarZeroAbaixo(ArrayList<ArrayList<Double>> matriz,int coluna){
         ArrayList<Double> auxMultiplicado;
         
@@ -91,25 +107,36 @@ public class Controle {
                
                 auxMultiplicado.add(matriz.get(i).get(j) - multiplicador*matriz.get(coluna).get(j));   
             }
-           
+           JOptionPane.showMessageDialog(null, multiplicador);
             auxMultiplicado.add(i+0.0);
             auxMultiplicado.add(multiplicador+0.0);
-            auxMultiplicado.add(coluna+0.0);
+            auxMultiplicado.add(coluna+1.0);
             matriz.set(i, auxMultiplicado);
              
         }
         
-       
-        
-     this.matrizParaTabela.addAll(matriz);
+        /**
+         * Para imprimir a matriz apos  ser zerada as linhas abaixo do pivot
+         */
         this.imprimirMatriz(matriz);
         return matriz;
     }
     
+    /**
+     * Metodo usado para encontrar o multiplicador de uma linha abaixo do pivot
+     * @param matriz - matriz com a qual trabalhamos
+     * @param coluna - coluna
+     * @param linha linha em q qeremos multiplicar
+     * @return 
+     */
     private double retornarMuliplicadorDaLinha(ArrayList<ArrayList<Double>> matriz,int coluna,int linha){                
         return matriz.get(linha).get(coluna) / matriz.get(coluna).get(coluna);
     }
     
+    /**
+     * Metodo chamado para concatenar a string do texto a imprimir na textArea
+     * @param matriz 
+     */
     private void imprimirMatriz(ArrayList<ArrayList<Double>> matriz){
         
         for(int i=0;i < this.numeroDeVariaveis; i++){
@@ -119,7 +146,7 @@ public class Controle {
             }
            
             this.textoAImprimir += "L'"+(i+1)+" = L"+(i+1)
-                    +" + ("+String.format("%.3f",this.matriz.get(i).get(this.matriz.get(i).size()-2))+") * L"+matriz.get(i).get(this.matriz.get(i).size()-1);
+                    +" - ("+String.format("%.3f",this.matriz.get(i).get(this.matriz.get(i).size()-2))+") * L"+matriz.get(i).get(this.matriz.get(i).size()-1);
             this.textoAImprimir += "\n";
             System.out.println("");
         }
@@ -128,20 +155,11 @@ public class Controle {
         
     }
     
-    private void imprimirMatrizA(ArrayList<ArrayList> matriz){
-        System.out.println("=aaaaaaaaaaaaaaaaa=============================================");
-        for(int i=0;i < this.numeroDeVariaveis; i++){
-            for(int j=0;j <= this.numeroDeVariaveis; j++){
-                this.textoAImprimir += matriz.get(i).get(j)+ " | ";
-                System.out.print(matriz.get(i).get(j)+ " | ");
-            }
-            this.textoAImprimir += this.textoAImprimir+"\n";
-            System.out.println("");
-        }
-        System.out.println("===aaaaaaaaaaaa===========================================");
-        
-    }
-    
+    /**
+     * Metodo usado para efectuar a retrosubstituicao e armazenar o resultado num hashMap
+     * @param matriz - matriz
+     * @return mapa de resultados
+     */
     public Map<String,Double> retornarResultados(ArrayList<ArrayList<Double>> matriz){
         Map<String,Double> mapa = new HashMap<>();
         double x = 0;
@@ -171,22 +189,22 @@ public class Controle {
         return mapa;
     }
     
-    private ModeloDaTabela modeloDaTabela;
-    public JTable preencherTabela(ArrayList matriz, JTable tabela){
-        JOptionPane.showMessageDialog(null,"fui chamado");
-        modeloDaTabela = new ModeloDaTabela(matriz);
-        tabela.setModel(modeloDaTabela);
-        tabela.revalidate();
-        return tabela;
-    }
-    
+    /**
+     * metodo usado para imprimir o texto na textArea
+     * @param ta
+     * @return 
+     */
     public JTextArea imprimirNaTA(JTextArea ta){
        ta.setText(textoAImprimir);
        
        return ta;
     }
 
-    private void prencherVarsNaList() {
+    /**
+     * Metodo usado para preencher a string texto a imprimir, de acordo com o nr de variaveis que existem na matriz 
+     * - preenche apenas a primeira linha  do texto
+     */
+    private void preencherVarsNaList() {
         
         for(int i =0; i <= this.numeroDeVariaveis; i++){
             if(i != this.numeroDeVariaveis)

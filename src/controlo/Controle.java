@@ -20,7 +20,7 @@ public class Controle {
     private ArrayList<ArrayList<Double>> matrizEscalonada;
     private ArrayList<ArrayList<Double>> matrizParaTabela;
     int numeroDeVariaveis = 3;
-    String textoAImprimir = "X1 \t| X2 \t| X3 \t| BI \t| Equacao\t|\n";
+    String textoAImprimir = "X1 \t| X2 \t| X3 \t| BI \t| Equacao \t\t\t| \n";
    
     
     
@@ -57,6 +57,8 @@ public class Controle {
         matriz.set(coluna, matriz.get(linhaDoPivot));
         matriz.set(linhaDoPivot, auxParaTroca);
         
+        this.imprimirMatriz(matriz);
+        
         return retornarZeroAbaixo(matriz, coluna);
     
     }
@@ -86,9 +88,10 @@ public class Controle {
                
                 auxMultiplicado.add(matriz.get(i).get(j) - multiplicador*matriz.get(coluna).get(j));   
             }
-            auxMultiplicado.add(coluna+0.0);
-            auxMultiplicado.add(multiplicador+0.0);
+           
             auxMultiplicado.add(i+0.0);
+            auxMultiplicado.add(multiplicador+0.0);
+            auxMultiplicado.add(coluna+0.0);
             matriz.set(i, auxMultiplicado);
              
         }
@@ -111,12 +114,13 @@ public class Controle {
                 this.textoAImprimir += String.format("%.2f",matriz.get(i).get(j))+ " \t| ";
                 System.out.print(matriz.get(i).get(j)+ " | ");
             }
-            this.textoAImprimir += "L"+matriz.get(i).get(this.numeroDeVariaveis-1)+" = L"+matriz.get(i).get(this.numeroDeVariaveis-1)
-                    +" + ("+this.matriz.get(i).get(this.numeroDeVariaveis-2)+") * L"+matriz.get(i).get(this.numeroDeVariaveis-3);
+           
+            this.textoAImprimir += "L'"+(i+1)+" = L"+(i+1)
+                    +" + ("+String.format("%.3f",this.matriz.get(i).get(this.matriz.get(i).size()-2))+") * L"+matriz.get(i).get(this.matriz.get(i).size()-1);
             this.textoAImprimir += "\n";
             System.out.println("");
         }
-        this.textoAImprimir += "================================================================================== \n";
+        this.textoAImprimir += "======================================================================================================= \n";
         System.out.println("==============================================");
         
     }

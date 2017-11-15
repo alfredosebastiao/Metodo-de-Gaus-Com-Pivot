@@ -29,6 +29,12 @@ public class Tela extends javax.swing.JFrame {
      */
     public Tela() {
         initComponents();
+       // this.pnMatriz.setSize(pnMatriz.getWidth(), pnMatriz.getHeight());
+        //this.pnMatriz.removeAll();
+        //this.pnMatriz.setSize(pnMatriz.getWidth(), pnMatriz.getHeight());
+      //  this.aumentarNrDeVariaveis();
+//        this.pnMatriz.removeAll();
+//        this.gerarCamposNoInicio();
     }
 
     /**
@@ -194,6 +200,11 @@ public class Tela extends javax.swing.JFrame {
         });
 
         jButton2.setText("Remover variavel");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         btnRemover.setText("Limpar");
 
@@ -335,16 +346,25 @@ public class Tela extends javax.swing.JFrame {
     }//GEN-LAST:event_tfX11ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        mexido = true;
         this.aumentarNrDeVariaveis();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void btnCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalcularActionPerformed
-        this.preencherArrayDeValores();
+        if(!mexido)
+            this.preencherArrayDeValores();
+        else
+            this.pegarValuesDoArray();
     }//GEN-LAST:event_btnCalcularActionPerformed
 
     private void tfX13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfX13ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_tfX13ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        mexido = true;
+        this.diminuirNrDeVariaveis();
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -419,7 +439,7 @@ public class Tela extends javax.swing.JFrame {
     private Controle controle = new Controle();
     private int numeroDeVar = 3;
     private Map<String, Double> mapaDeResultados = new HashMap();
-
+    private boolean mexido = false;
     /**
      * Metodo usado para buscar os valor introduzidos
      */
@@ -461,22 +481,36 @@ public class Tela extends javax.swing.JFrame {
 
         // this.preencherTabela(matriz);
     }
+    
+    
+    private void pegarValuesDoArray() {
+        cadaLinha = new ArrayList<>();
+        matriz = new ArrayList<>();
+        mapaDeResultados = new HashMap();
+        int cont = 0;
+        
+      //  JOptionPane.showMessageDialog(null, componentes.size());
+        for(int i = 0; i < this.numeroDeVar; i++){
+            for(int j = 0; j <= this.numeroDeVar;j++){
+                JXTextField t = (JXTextField) componentes.get(cont);
+                cadaLinha.add(Double.parseDouble(t.getText()));
+                cont++;
+            }
+            cadaLinha.add(0.0);
+            cadaLinha.add(0.0);
+            cadaLinha.add(0.0);
+            this.matriz.add(cadaLinha);
+            cadaLinha = new ArrayList<>();
+           
+        }
+        this.mapaDeResultados = this.controle.receberMatriz(matriz);
+        // controle.preencherTabela(matriz, tabela);
+        lbResultado.setText(this.mapaDeResultados.toString());
+        this.controle.imprimirNaTA(jTextArea1);
 
+        
+    }
     ModeloDaTabela modeloDaTabela;
-//    public void preencherTabela(ArrayList<ArrayList<Double>> matriz){
-//        for(int i=0;i < 3; i++){
-//            for(int j=0;j <= 3; j++){
-//                JOptionPane.showMessageDialog(this, matriz.get(i).get(j));
-//               // System.out.print(matriz.get(i).get(j)+ " | ");
-//            }
-//          
-//            System.out.println("");
-//        }
-//        modeloDaTabela = new ModeloDaTabela(matriz);
-//        this.tabela.setModel(modeloDaTabela);
-//        this.tabela.revalidate();
-//        
-//    }
 
     /**
      * Metoodo usado para acrescentar o nr de variaveis, aumentando assim o
@@ -485,40 +519,68 @@ public class Tela extends javax.swing.JFrame {
     private void aumentarNrDeVariaveis() {
         this.numeroDeVar++;
         if (this.numeroDeVar <= 7) {
-            this.aumentarNrDeCampos();
+            this.aumentarNrDeCampos(true);
         } else {
             JOptionPane.showMessageDialog(this, "Antigiu o numero maximo de variaveis");
+        }
+    }
+    
+    
+    /**
+     * Metoodo usado para diminuir nr de variaveis, aumentando assim o
+     * numero de campos para addicao de values
+     */
+    private void diminuirNrDeVariaveis() {
+        this.numeroDeVar--;
+        if (this.numeroDeVar >= 2) {
+            this.aumentarNrDeCampos(false);
+        } else {
+            JOptionPane.showMessageDialog(this, "Antigiu o numero minimo de variaveis");
         }
     }
 
     /**
      * Metodo usado para aumentar nr de campos para adiccao de values
      */
-    private void aumentarNrDeCampos() {
+    private void aumentarNrDeCampos(boolean aumentar) {
 
         GridLayout layout = (GridLayout) pnMatriz.getLayout();
         layout.setColumns(this.numeroDeVar + 1);
         layout.setRows(this.numeroDeVar);
 
-        this.gerarCampos();
+        this.gerarCampos(aumentar);
 
-        pnMatriz.setPreferredSize(new Dimension(pnMatriz.getWidth(), pnMatriz.getHeight() + 2));
-        pnMatriz.setSize(pnMatriz.getWidth() + 5, pnMatriz.getHeight() + 5);
+    
         pnMatriz.setLayout(layout);
         pnMatriz.validate();
 
     }
 
-    private ArrayList componentes;
-
     /**
-     * Metodo usado para gerar campos
+     * Var usada para armazenar cada componente gerado
      */
-    private void gerarCampos() {
+    private ArrayList componentes;
+    /**
+     * Metodo usado para gerar campos, de acordo com o numero de variaveis
+     * @param aumentar  - var q indica se eh para aumentar ou diminuir, permitindo assim aumentar ou diminuir tamanho da matriz
+     */
+    private void gerarCampos(boolean aumentar) {
+        /**
+         * Removendo todos componentes do painel da matriz
+         */
         pnMatriz.removeAll();
-        JOptionPane.showMessageDialog(this, pnMatriz.getWidth());
-        pnMatriz.setSize(pnMatriz.getWidth() + 20, pnMatriz.getHeight() + 20);
-        componentes = new ArrayList();
+       componentes = new ArrayList();
+       
+        /**
+         * verifica se eh para aumentar variaveis or not
+         */
+        if(aumentar)
+            pnMatriz.setSize(pnMatriz.getWidth() + 25, pnMatriz.getHeight() + 25);
+        else{
+            pnMatriz.setSize(pnMatriz.getWidth() - 25, pnMatriz.getHeight() - 25);
+        }
+        
+        
         for (int i = 0; i < this.numeroDeVar; i++) {
             for (int j = 0; j <= this.numeroDeVar + 1; j++) {
                 if (j == this.numeroDeVar) {
@@ -543,5 +605,43 @@ public class Tela extends javax.swing.JFrame {
             }
         }
     }
+    
+    
+    private void gerarCamposNoInicio() {
+        /**
+         * Removendo todos componentes do painel da matriz
+         */
+        pnMatriz.removeAll();
+       componentes = new ArrayList();
+       
+        
+        
+        
+        for (int i = 0; i < 2; i++) {
+            for (int j = 0; j <= 2 + 1; j++) {
+                if (j == 2) {
+                    JLabel lb = new JLabel("=");
+                    lb.setHorizontalAlignment(JLabel.CENTER);
+                    pnMatriz.add(lb);
+                } else {
+                    JXTextField tf = new JXTextField();
+                    tf.setHorizontalAlignment(JXTextField.CENTER);
+                    tf.setSize(50, 50);
+                    if (j == 3) {
 
+                        tf.setPrompt("b" + (i + 1));
+
+                    } else {
+
+                        tf.setPrompt("X" + (i + 1) + (j + 1));
+
+                    }
+                    componentes.add(tf);
+                    pnMatriz.add(tf);
+                }
+            }
+        }
+    }
+
+    
 }

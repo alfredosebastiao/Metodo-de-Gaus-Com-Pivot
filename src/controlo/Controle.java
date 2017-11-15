@@ -20,7 +20,7 @@ public class Controle {
     private ArrayList<ArrayList<Double>> matrizEscalonada;
     private ArrayList<ArrayList<Double>> matrizParaTabela;
     int numeroDeVariaveis = 3;
-    String textoAImprimir = "X1 \t| X2 \t| X3 \t| BI \t| Equacao \t\t\t| \n";
+    String textoAImprimir = "";
    
     
     
@@ -35,7 +35,10 @@ public class Controle {
 //            this.matrizParaTabela.add(matriz.get(j));
 //        }
 //        this.matrizParaTabela.addAll(matriz);
+        this.prencherVarsNaList();
         this.imprimirMatriz(matriz);
+        
+        
         
         for(int i = 0; i < this.numeroDeVariaveis; i++){
             this.matriz = retornarMatrizComPivot(this.matriz, i);
@@ -120,7 +123,7 @@ public class Controle {
             this.textoAImprimir += "\n";
             System.out.println("");
         }
-        this.textoAImprimir += "======================================================================================================= \n";
+        this.textoAImprimir += "=================================================================================================== \n";
         System.out.println("==============================================");
         
     }
@@ -181,5 +184,18 @@ public class Controle {
        ta.setText(textoAImprimir);
        
        return ta;
+    }
+
+    private void prencherVarsNaList() {
+        
+        for(int i =0; i <= this.numeroDeVariaveis; i++){
+            if(i != this.numeroDeVariaveis)
+                this.textoAImprimir += "X"+(i+1)+ " \t |";
+            else
+                this.textoAImprimir += "bi \t |";
+        }
+        
+        this.textoAImprimir += " Equacao \t\t\t| \n";
+       
     }
 }

@@ -22,16 +22,11 @@ public class ModeloDaTabela extends AbstractTableModel {
     }
 
     public ModeloDaTabela() {
+        
     }
-
-    
-
-    
  
     @Override
     public boolean isCellEditable(int i, int i1) {
-       
-        
         return false;
     }
 
@@ -39,10 +34,6 @@ public class ModeloDaTabela extends AbstractTableModel {
     public String getColumnName(int i) {
         return colunas[i]; //To change body of generated methods, choose Tools | Templates.
     }
-    
-   
-    
-   
 
     @Override
     public int getRowCount() {
@@ -56,14 +47,8 @@ public class ModeloDaTabela extends AbstractTableModel {
 
     @Override
     public Object getValueAt(int rowIndex, int columnIndex) {
-         
-    
-        
-        cadaLinha = (ArrayList) matriz.get(rowIndex);
-      
        
-       
-        
+        cadaLinha = (ArrayList) matriz.get(rowIndex);     
         switch(columnIndex){
             case 0: return cadaLinha.get(0);
             case 1: return cadaLinha.get(1);
@@ -73,7 +58,6 @@ public class ModeloDaTabela extends AbstractTableModel {
             case 5: return "----------";
         }
         
-       
         return null;
         
         

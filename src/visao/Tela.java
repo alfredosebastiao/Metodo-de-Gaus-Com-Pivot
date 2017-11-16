@@ -73,6 +73,8 @@ public class Tela extends javax.swing.JFrame {
         jSeparator1 = new javax.swing.JSeparator();
         btnRemover = new javax.swing.JButton();
         btnCalcular = new javax.swing.JButton();
+        tfNrDeCasas = new org.jdesktop.swingx.JXTextField();
+        jLabel5 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jSeparator2 = new javax.swing.JSeparator();
         jLabel6 = new javax.swing.JLabel();
@@ -278,20 +280,28 @@ public class Tela extends javax.swing.JFrame {
             }
         });
 
+        tfNrDeCasas.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        tfNrDeCasas.setText("2");
+
+        jLabel5.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel5.setText("Nr de Casas Decimais");
+
         javax.swing.GroupLayout pnEquacaoLayout = new javax.swing.GroupLayout(pnEquacao);
         pnEquacao.setLayout(pnEquacaoLayout);
         pnEquacaoLayout.setHorizontalGroup(
             pnEquacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jSeparator1, javax.swing.GroupLayout.Alignment.TRAILING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnEquacaoLayout.createSequentialGroup()
+            .addGroup(pnEquacaoLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(pnEquacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnEquacaoLayout.createSequentialGroup()
                         .addComponent(pnMatriz, javax.swing.GroupLayout.PREFERRED_SIZE, 272, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 127, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 100, Short.MAX_VALUE)
                         .addGroup(pnEquacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(tfNrDeCasas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnEquacaoLayout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(btnRemover, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -307,8 +317,12 @@ public class Tela extends javax.swing.JFrame {
                     .addGroup(pnEquacaoLayout.createSequentialGroup()
                         .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 383, Short.MAX_VALUE)
+                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel5)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(tfNrDeCasas, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 359, Short.MAX_VALUE)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(10, 10, 10)
                 .addGroup(pnEquacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -571,6 +585,7 @@ public class Tela extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane2;
@@ -583,6 +598,7 @@ public class Tela extends javax.swing.JFrame {
     private javax.swing.JPanel pnPrincipal;
     private org.jdesktop.swingx.JXTextField tfB1;
     private org.jdesktop.swingx.JXTextField tfB3;
+    private org.jdesktop.swingx.JXTextField tfNrDeCasas;
     private org.jdesktop.swingx.JXTextField tfX11;
     private org.jdesktop.swingx.JXTextField tfX12;
     private org.jdesktop.swingx.JXTextField tfX13;
@@ -639,7 +655,7 @@ public class Tela extends javax.swing.JFrame {
         cadaLinha.add(0.0);
         matriz.add(cadaLinha);
         
-        this.mapaDeResultados = this.controle.receberMatriz(matriz);
+        this.mapaDeResultados = this.controle.receberMatriz(matriz, tfNrDeCasas.getText());
         lbResultado.setText(this.mapaDeResultados.toString());
         this.controle.imprimirNaTA(jTextArea1);
         
@@ -668,7 +684,7 @@ public class Tela extends javax.swing.JFrame {
             cadaLinha = new ArrayList<>();
             
         }
-        this.mapaDeResultados = this.controle.receberMatriz(matriz);
+        this.mapaDeResultados = this.controle.receberMatriz(matriz, tfNrDeCasas.getText());
         lbResultado.setText(this.mapaDeResultados.toString());
         this.controle.imprimirNaTA(jTextArea1);
         

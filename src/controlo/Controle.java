@@ -3,11 +3,7 @@ package controlo;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
-import javax.swing.JOptionPane;
-import javax.swing.JTable;
 import javax.swing.JTextArea;
-import modelo.ModeloDaTabela;
-
 
 /**
  *
@@ -21,6 +17,7 @@ public class Controle {
     private ArrayList<ArrayList<Double>> matrizParaTabela;
     int numeroDeVariaveis = 3;
     String textoAImprimir = "";
+    private String nrDeCasas;
    
     
     /**
@@ -28,12 +25,12 @@ public class Controle {
      * @param matriz  - matriz a calcuar
      * @return Map<String, Double> map de resultados
      */
-    public Map<String,Double> receberMatriz(ArrayList<ArrayList<Double>> matriz){
+    public Map<String,Double> receberMatriz(ArrayList<ArrayList<Double>> matriz, String nrDeCasasDecimais){
         this.matriz = new ArrayList<>();
         this.matrizParaTabela = new ArrayList<>();
         this.matriz = matriz;
         this.numeroDeVariaveis = this.matriz.size();
-        
+        this.nrDeCasas = nrDeCasasDecimais;
         
         this.preencherVarsNaList();
         this.imprimirMatriz(matriz);
@@ -141,12 +138,12 @@ public class Controle {
         
         for(int i=0;i < this.numeroDeVariaveis; i++){
             for(int j=0;j <= this.numeroDeVariaveis; j++){
-                this.textoAImprimir += String.format("%.2f",matriz.get(i).get(j))+ " \t| ";
+                this.textoAImprimir += String.format("%."+this.nrDeCasas+"f",matriz.get(i).get(j))+ " \t| ";
                 System.out.print(matriz.get(i).get(j)+ " | ");
             }
            
             this.textoAImprimir += "L'"+(i+1)+" = L"+(i+1)
-                    +" - ("+String.format("%.3f",this.matriz.get(i).get(this.matriz.get(i).size()-2))+") * L"+matriz.get(i).get(this.matriz.get(i).size()-1);
+                    +" - ("+String.format("%."+this.nrDeCasas+"f",this.matriz.get(i).get(this.matriz.get(i).size()-2))+") * L"+matriz.get(i).get(this.matriz.get(i).size()-1);
             this.textoAImprimir += "\n";
             System.out.println("");
         }

@@ -107,7 +107,7 @@ public class Controle {
                
                 auxMultiplicado.add(matriz.get(i).get(j) - multiplicador*matriz.get(coluna).get(j));   
             }
-           JOptionPane.showMessageDialog(null, multiplicador);
+         
             auxMultiplicado.add(i+0.0);
             auxMultiplicado.add(multiplicador+0.0);
             auxMultiplicado.add(coluna+1.0);

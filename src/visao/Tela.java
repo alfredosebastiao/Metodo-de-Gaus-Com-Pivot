@@ -272,6 +272,11 @@ public class Tela extends javax.swing.JFrame {
         });
 
         btnRemover.setText("Limpar");
+        btnRemover.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRemoverActionPerformed(evt);
+            }
+        });
 
         btnCalcular.setText("Calcular");
         btnCalcular.addActionListener(new java.awt.event.ActionListener() {
@@ -540,6 +545,10 @@ public class Tela extends javax.swing.JFrame {
             evt.consume();
         }
     }//GEN-LAST:event_tfB3KeyTyped
+
+    private void btnRemoverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRemoverActionPerformed
+        this.limparCampos();
+    }//GEN-LAST:event_btnRemoverActionPerformed
 
     /**
      * @param args the command line arguments
@@ -856,5 +865,35 @@ public class Tela extends javax.swing.JFrame {
         }
         
         return true;
+    }
+
+    /**
+     * Metodo usado para limpar os campos
+     */
+    private void limparCampos() {
+        if(!mexido){
+            this.limparOsPrimeirosCampos();
+            return;
+        }
+        
+        for(Object ob : componentes){
+            JXTextField tf = (JXTextField) ob;
+            tf.setText(null);
+        }
+    }
+
+    private void limparOsPrimeirosCampos() {
+       this.tfX11.setText(null);
+       this.tfX12.setText(null);
+       this.tfX13.setText(null);
+       this.tfB1.setText(null);
+       this.tfX21.setText(null);
+       this.tfX22.setText(null);
+       this.tfX23.setText(null);
+       this.tfXB2.setText(null);
+       this.tfX31.setText(null);
+       this.tfX32.setText(null);
+       this.tfX33.setText(null);
+       this.tfB3.setText(null);
     }
 }

@@ -1,1 +1,1 @@
-# Metodo-de-Gaus-Jordam
+# Metodo-de-Gaus-Com-Pivot

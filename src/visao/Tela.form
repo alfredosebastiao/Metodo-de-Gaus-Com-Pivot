@@ -92,15 +92,17 @@
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="jSeparator1" alignment="1" max="32767" attributes="0"/>
-                  <Group type="102" alignment="1" attributes="0">
+                  <Group type="102" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="1" attributes="0">
                               <Component id="pnMatriz" min="-2" pref="272" max="-2" attributes="0"/>
-                              <EmptySpace pref="127" max="32767" attributes="0"/>
+                              <EmptySpace pref="100" max="32767" attributes="0"/>
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
                                   <Component id="jButton1" max="32767" attributes="0"/>
                                   <Component id="jButton2" max="32767" attributes="0"/>
+                                  <Component id="tfNrDeCasas" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="jLabel5" min="-2" pref="113" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <Group type="102" alignment="1" attributes="0">
@@ -123,9 +125,13 @@
                               <Component id="jButton1" min="-2" pref="49" max="-2" attributes="0"/>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Component id="jButton2" min="-2" pref="48" max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                              <Component id="tfNrDeCasas" min="-2" pref="50" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <EmptySpace pref="383" max="32767" attributes="0"/>
+                      <EmptySpace pref="359" max="32767" attributes="0"/>
                       <Component id="jSeparator1" min="-2" pref="10" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
@@ -163,6 +169,7 @@
                   </Properties>
                   <Events>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tfX11ActionPerformed"/>
+                    <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="tfX11KeyTyped"/>
                   </Events>
                 </Component>
                 <Component class="org.jdesktop.swingx.JXTextField" name="tfX12">
@@ -179,6 +186,9 @@
                     </Property>
                     <Property name="prompt" type="java.lang.String" value="x12"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="tfX12KeyTyped"/>
+                  </Events>
                 </Component>
                 <Component class="org.jdesktop.swingx.JXTextField" name="tfX13">
                   <Properties>
@@ -196,6 +206,7 @@
                   </Properties>
                   <Events>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tfX13ActionPerformed"/>
+                    <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="tfX13KeyTyped"/>
                   </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel2">
@@ -218,6 +229,9 @@
                     </Property>
                     <Property name="prompt" type="java.lang.String" value="b1"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="tfB1KeyTyped"/>
+                  </Events>
                 </Component>
                 <Component class="org.jdesktop.swingx.JXTextField" name="tfX21">
                   <Properties>
@@ -233,6 +247,9 @@
                     </Property>
                     <Property name="prompt" type="java.lang.String" value="x21"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="tfX21KeyTyped"/>
+                  </Events>
                 </Component>
                 <Component class="org.jdesktop.swingx.JXTextField" name="tfX22">
                   <Properties>
@@ -248,6 +265,9 @@
                     </Property>
                     <Property name="prompt" type="java.lang.String" value="x22"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="tfX22KeyTyped"/>
+                  </Events>
                 </Component>
                 <Component class="org.jdesktop.swingx.JXTextField" name="tfX23">
                   <Properties>
@@ -263,6 +283,9 @@
                     </Property>
                     <Property name="prompt" type="java.lang.String" value="x23"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="tfX23KeyTyped"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel3">
                   <Properties>
@@ -284,6 +307,9 @@
                     </Property>
                     <Property name="prompt" type="java.lang.String" value="b2"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="tfXB2KeyTyped"/>
+                  </Events>
                 </Component>
                 <Component class="org.jdesktop.swingx.JXTextField" name="tfX31">
                   <Properties>
@@ -299,6 +325,9 @@
                     </Property>
                     <Property name="prompt" type="java.lang.String" value="x31"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="tfX31KeyTyped"/>
+                  </Events>
                 </Component>
                 <Component class="org.jdesktop.swingx.JXTextField" name="tfX32">
                   <Properties>
@@ -314,6 +343,9 @@
                     </Property>
                     <Property name="prompt" type="java.lang.String" value="x32"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="tfX32KeyTyped"/>
+                  </Events>
                 </Component>
                 <Component class="org.jdesktop.swingx.JXTextField" name="tfX33">
                   <Properties>
@@ -329,6 +361,9 @@
                     </Property>
                     <Property name="prompt" type="java.lang.String" value="x33"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="tfX33KeyTyped"/>
+                  </Events>
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel4">
                   <Properties>
@@ -350,6 +385,9 @@
                     </Property>
                     <Property name="prompt" type="java.lang.String" value="b3"/>
                   </Properties>
+                  <Events>
+                    <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="tfB3KeyTyped"/>
+                  </Events>
                 </Component>
               </SubComponents>
             </Container>
@@ -375,6 +413,9 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Limpar"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnRemoverActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JButton" name="btnCalcular">
               <Properties>
@@ -383,6 +424,20 @@
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCalcularActionPerformed"/>
               </Events>
+            </Component>
+            <Component class="org.jdesktop.swingx.JXTextField" name="tfNrDeCasas">
+              <Properties>
+                <Property name="horizontalAlignment" type="int" value="0"/>
+                <Property name="text" type="java.lang.String" value="2"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel5">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Tahoma" size="12" style="0"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Nr de Casas Decimais"/>
+              </Properties>
             </Component>
           </SubComponents>
         </Container>

@@ -9,6 +9,9 @@ import controlo.Controle;
 import java.awt.Dimension;
 import java.awt.GridBagLayout;
 import java.awt.GridLayout;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -32,7 +35,7 @@ public class Tela extends javax.swing.JFrame {
        // this.pnMatriz.setSize(pnMatriz.getWidth(), pnMatriz.getHeight());
         //this.pnMatriz.removeAll();
         //this.pnMatriz.setSize(pnMatriz.getWidth(), pnMatriz.getHeight());
-      //  this.aumentarNrDeVariaveis();
+        //  this.aumentarNrDeVariaveis();
 //        this.pnMatriz.removeAll();
 //        this.gerarCamposNoInicio();
     }
@@ -70,6 +73,8 @@ public class Tela extends javax.swing.JFrame {
         jSeparator1 = new javax.swing.JSeparator();
         btnRemover = new javax.swing.JButton();
         btnCalcular = new javax.swing.JButton();
+        tfNrDeCasas = new org.jdesktop.swingx.JXTextField();
+        jLabel5 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jSeparator2 = new javax.swing.JSeparator();
         jLabel6 = new javax.swing.JLabel();
@@ -96,6 +101,11 @@ public class Tela extends javax.swing.JFrame {
                 tfX11ActionPerformed(evt);
             }
         });
+        tfX11.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                tfX11KeyTyped(evt);
+            }
+        });
         pnMatriz.add(tfX11);
 
         tfX12.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -103,6 +113,11 @@ public class Tela extends javax.swing.JFrame {
         tfX12.setMinimumSize(new java.awt.Dimension(50, 50));
         tfX12.setPreferredSize(new java.awt.Dimension(50, 50));
         tfX12.setPrompt("x12");
+        tfX12.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                tfX12KeyTyped(evt);
+            }
+        });
         pnMatriz.add(tfX12);
 
         tfX13.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -113,6 +128,11 @@ public class Tela extends javax.swing.JFrame {
         tfX13.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 tfX13ActionPerformed(evt);
+            }
+        });
+        tfX13.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                tfX13KeyTyped(evt);
             }
         });
         pnMatriz.add(tfX13);
@@ -126,6 +146,11 @@ public class Tela extends javax.swing.JFrame {
         tfB1.setMinimumSize(new java.awt.Dimension(50, 50));
         tfB1.setPreferredSize(new java.awt.Dimension(50, 50));
         tfB1.setPrompt("b1");
+        tfB1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                tfB1KeyTyped(evt);
+            }
+        });
         pnMatriz.add(tfB1);
 
         tfX21.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -133,6 +158,11 @@ public class Tela extends javax.swing.JFrame {
         tfX21.setMinimumSize(new java.awt.Dimension(50, 50));
         tfX21.setPreferredSize(new java.awt.Dimension(50, 50));
         tfX21.setPrompt("x21");
+        tfX21.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                tfX21KeyTyped(evt);
+            }
+        });
         pnMatriz.add(tfX21);
 
         tfX22.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -140,6 +170,11 @@ public class Tela extends javax.swing.JFrame {
         tfX22.setMinimumSize(new java.awt.Dimension(50, 50));
         tfX22.setPreferredSize(new java.awt.Dimension(50, 50));
         tfX22.setPrompt("x22");
+        tfX22.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                tfX22KeyTyped(evt);
+            }
+        });
         pnMatriz.add(tfX22);
 
         tfX23.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -147,6 +182,11 @@ public class Tela extends javax.swing.JFrame {
         tfX23.setMinimumSize(new java.awt.Dimension(50, 50));
         tfX23.setPreferredSize(new java.awt.Dimension(50, 50));
         tfX23.setPrompt("x23");
+        tfX23.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                tfX23KeyTyped(evt);
+            }
+        });
         pnMatriz.add(tfX23);
 
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -158,6 +198,11 @@ public class Tela extends javax.swing.JFrame {
         tfXB2.setMinimumSize(new java.awt.Dimension(50, 50));
         tfXB2.setPreferredSize(new java.awt.Dimension(50, 50));
         tfXB2.setPrompt("b2");
+        tfXB2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                tfXB2KeyTyped(evt);
+            }
+        });
         pnMatriz.add(tfXB2);
 
         tfX31.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -165,6 +210,11 @@ public class Tela extends javax.swing.JFrame {
         tfX31.setMinimumSize(new java.awt.Dimension(50, 50));
         tfX31.setPreferredSize(new java.awt.Dimension(50, 50));
         tfX31.setPrompt("x31");
+        tfX31.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                tfX31KeyTyped(evt);
+            }
+        });
         pnMatriz.add(tfX31);
 
         tfX32.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -172,6 +222,11 @@ public class Tela extends javax.swing.JFrame {
         tfX32.setMinimumSize(new java.awt.Dimension(50, 50));
         tfX32.setPreferredSize(new java.awt.Dimension(50, 50));
         tfX32.setPrompt("x32");
+        tfX32.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                tfX32KeyTyped(evt);
+            }
+        });
         pnMatriz.add(tfX32);
 
         tfX33.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -179,6 +234,11 @@ public class Tela extends javax.swing.JFrame {
         tfX33.setMinimumSize(new java.awt.Dimension(50, 50));
         tfX33.setPreferredSize(new java.awt.Dimension(50, 50));
         tfX33.setPrompt("x33");
+        tfX33.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                tfX33KeyTyped(evt);
+            }
+        });
         pnMatriz.add(tfX33);
 
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -190,6 +250,11 @@ public class Tela extends javax.swing.JFrame {
         tfB3.setMinimumSize(new java.awt.Dimension(50, 50));
         tfB3.setPreferredSize(new java.awt.Dimension(50, 50));
         tfB3.setPrompt("b3");
+        tfB3.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                tfB3KeyTyped(evt);
+            }
+        });
         pnMatriz.add(tfB3);
 
         jButton1.setText("Adicionar variavel");
@@ -207,6 +272,11 @@ public class Tela extends javax.swing.JFrame {
         });
 
         btnRemover.setText("Limpar");
+        btnRemover.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRemoverActionPerformed(evt);
+            }
+        });
 
         btnCalcular.setText("Calcular");
         btnCalcular.addActionListener(new java.awt.event.ActionListener() {
@@ -215,20 +285,28 @@ public class Tela extends javax.swing.JFrame {
             }
         });
 
+        tfNrDeCasas.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        tfNrDeCasas.setText("2");
+
+        jLabel5.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel5.setText("Nr de Casas Decimais");
+
         javax.swing.GroupLayout pnEquacaoLayout = new javax.swing.GroupLayout(pnEquacao);
         pnEquacao.setLayout(pnEquacaoLayout);
         pnEquacaoLayout.setHorizontalGroup(
             pnEquacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jSeparator1, javax.swing.GroupLayout.Alignment.TRAILING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnEquacaoLayout.createSequentialGroup()
+            .addGroup(pnEquacaoLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(pnEquacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnEquacaoLayout.createSequentialGroup()
                         .addComponent(pnMatriz, javax.swing.GroupLayout.PREFERRED_SIZE, 272, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 127, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 100, Short.MAX_VALUE)
                         .addGroup(pnEquacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                            .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(tfNrDeCasas, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnEquacaoLayout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(btnRemover, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -244,8 +322,12 @@ public class Tela extends javax.swing.JFrame {
                     .addGroup(pnEquacaoLayout.createSequentialGroup()
                         .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 383, Short.MAX_VALUE)
+                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel5)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(tfNrDeCasas, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 359, Short.MAX_VALUE)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(10, 10, 10)
                 .addGroup(pnEquacaoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -351,10 +433,11 @@ public class Tela extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void btnCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalcularActionPerformed
-        if(!mexido)
+        if (!mexido) {
             this.preencherArrayDeValores();
-        else
+        } else {
             this.pegarValuesDoArray();
+        }
     }//GEN-LAST:event_btnCalcularActionPerformed
 
     private void tfX13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfX13ActionPerformed
@@ -365,6 +448,107 @@ public class Tela extends javax.swing.JFrame {
         mexido = true;
         this.diminuirNrDeVariaveis();
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void tfX11KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfX11KeyTyped
+        char input = evt.getKeyChar();
+        if (!(Character.isDigit(input) || input == '-')) {
+            getToolkit().beep();
+            evt.consume();
+        }
+        
+    }//GEN-LAST:event_tfX11KeyTyped
+
+    private void tfX12KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfX12KeyTyped
+        char input = evt.getKeyChar();
+        if (!(Character.isDigit(input) || input == '-')) {
+            getToolkit().beep();
+            evt.consume();
+        }
+    }//GEN-LAST:event_tfX12KeyTyped
+
+    private void tfX13KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfX13KeyTyped
+        char input = evt.getKeyChar();
+        if (!(Character.isDigit(input) || input == '-')) {
+            getToolkit().beep();
+            evt.consume();
+        }
+    }//GEN-LAST:event_tfX13KeyTyped
+
+    private void tfB1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfB1KeyTyped
+        char input = evt.getKeyChar();
+        if (!(Character.isDigit(input) || input == '-')) {
+            getToolkit().beep();
+            evt.consume();
+        }
+    }//GEN-LAST:event_tfB1KeyTyped
+
+    private void tfX21KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfX21KeyTyped
+        char input = evt.getKeyChar();
+        if (!(Character.isDigit(input) || input == '-')) {
+            getToolkit().beep();
+            evt.consume();
+        }
+    }//GEN-LAST:event_tfX21KeyTyped
+
+    private void tfX22KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfX22KeyTyped
+        char input = evt.getKeyChar();
+        if (!(Character.isDigit(input) || input == '-')) {
+            getToolkit().beep();
+            evt.consume();
+        }
+    }//GEN-LAST:event_tfX22KeyTyped
+
+    private void tfX23KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfX23KeyTyped
+        char input = evt.getKeyChar();
+        if (!(Character.isDigit(input) || input == '-')) {
+            getToolkit().beep();
+            evt.consume();
+        }
+    }//GEN-LAST:event_tfX23KeyTyped
+
+    private void tfXB2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfXB2KeyTyped
+        char input = evt.getKeyChar();
+        if (!(Character.isDigit(input) || input == '-')) {
+            getToolkit().beep();
+            evt.consume();
+        }
+    }//GEN-LAST:event_tfXB2KeyTyped
+
+    private void tfX31KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfX31KeyTyped
+        char input = evt.getKeyChar();
+        if (!(Character.isDigit(input) || input == '-')) {
+            getToolkit().beep();
+            evt.consume();
+        }
+    }//GEN-LAST:event_tfX31KeyTyped
+
+    private void tfX32KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfX32KeyTyped
+        char input = evt.getKeyChar();
+        if (!(Character.isDigit(input) || input == '-')) {
+            getToolkit().beep();
+            evt.consume();
+        }
+    }//GEN-LAST:event_tfX32KeyTyped
+
+    private void tfX33KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfX33KeyTyped
+       char input = evt.getKeyChar();
+        if (!(Character.isDigit(input) || input == '-')) {
+            getToolkit().beep();
+            evt.consume();
+        }
+    }//GEN-LAST:event_tfX33KeyTyped
+
+    private void tfB3KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfB3KeyTyped
+        char input = evt.getKeyChar();
+        if (!(Character.isDigit(input) || input == '-')) {
+            getToolkit().beep();
+            evt.consume();
+        }
+    }//GEN-LAST:event_tfB3KeyTyped
+
+    private void btnRemoverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRemoverActionPerformed
+        this.limparCampos();
+    }//GEN-LAST:event_btnRemoverActionPerformed
 
     /**
      * @param args the command line arguments
@@ -410,6 +594,7 @@ public class Tela extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane2;
@@ -422,6 +607,7 @@ public class Tela extends javax.swing.JFrame {
     private javax.swing.JPanel pnPrincipal;
     private org.jdesktop.swingx.JXTextField tfB1;
     private org.jdesktop.swingx.JXTextField tfB3;
+    private org.jdesktop.swingx.JXTextField tfNrDeCasas;
     private org.jdesktop.swingx.JXTextField tfX11;
     private org.jdesktop.swingx.JXTextField tfX12;
     private org.jdesktop.swingx.JXTextField tfX13;
@@ -438,11 +624,12 @@ public class Tela extends javax.swing.JFrame {
     private ArrayList<Double> cadaLinha = new ArrayList();
     private Controle controle = new Controle();
     private int numeroDeVar = 3;
-    private Map<String, Double> mapaDeResultados = new HashMap();
+    private Map<String, String> mapaDeResultados = new HashMap();
     /**
      * Variavel usada para verificar se o nr de variaveis foi ou nao mexido
      */
     private boolean mexido = false;
+
     /**
      * Metodo usado para buscar os valor introduzidos
      */
@@ -456,7 +643,7 @@ public class Tela extends javax.swing.JFrame {
         cadaLinha.add(0.0);
         cadaLinha.add(0.0);
         matriz.add(cadaLinha);
-
+        
         cadaLinha = new ArrayList<>();
         cadaLinha.add(Double.parseDouble(tfX21.getText()));
         cadaLinha.add(Double.parseDouble(tfX22.getText()));
@@ -466,7 +653,7 @@ public class Tela extends javax.swing.JFrame {
         cadaLinha.add(0.0);
         cadaLinha.add(0.0);
         matriz.add(cadaLinha);
-
+        
         cadaLinha = new ArrayList<>();
         cadaLinha.add(Double.parseDouble(tfX31.getText()));
         cadaLinha.add(Double.parseDouble(tfX32.getText()));
@@ -477,14 +664,15 @@ public class Tela extends javax.swing.JFrame {
         cadaLinha.add(0.0);
         matriz.add(cadaLinha);
         
-        this.mapaDeResultados = this.controle.receberMatriz(matriz);
+        this.mapaDeResultados = this.controle.receberMatriz(matriz, tfNrDeCasas.getText());
         lbResultado.setText(this.mapaDeResultados.toString());
         this.controle.imprimirNaTA(jTextArea1);
-
+        
     }
-    
+
     /**
-     * Metodo usado para pegar os valores do arrayPreenchidoo apos adicionar ou remover variavel
+     * Metodo usado para pegar os valores do arrayPreenchidoo apos adicionar ou
+     * remover variavel
      */
     private void pegarValuesDoArray() {
         cadaLinha = new ArrayList<>();
@@ -492,8 +680,8 @@ public class Tela extends javax.swing.JFrame {
         mapaDeResultados = new HashMap();
         int cont = 0;
         
-        for(int i = 0; i < this.numeroDeVar; i++){
-            for(int j = 0; j <= this.numeroDeVar;j++){
+        for (int i = 0; i < this.numeroDeVar; i++) {
+            for (int j = 0; j <= this.numeroDeVar; j++) {
                 JXTextField t = (JXTextField) componentes.get(cont);
                 cadaLinha.add(Double.parseDouble(t.getText()));
                 cont++;
@@ -503,12 +691,11 @@ public class Tela extends javax.swing.JFrame {
             cadaLinha.add(0.0);
             this.matriz.add(cadaLinha);
             cadaLinha = new ArrayList<>();
-           
+            
         }
-        this.mapaDeResultados = this.controle.receberMatriz(matriz);
+        this.mapaDeResultados = this.controle.receberMatriz(matriz, tfNrDeCasas.getText());
         lbResultado.setText(this.mapaDeResultados.toString());
         this.controle.imprimirNaTA(jTextArea1);
-
         
     }
 
@@ -524,11 +711,10 @@ public class Tela extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, "Antigiu o numero maximo de variaveis");
         }
     }
-    
-    
+
     /**
-     * Metoodo usado para diminuir nr de variaveis, aumentando assim o
-     * numero de campos para addicao de values
+     * Metoodo usado para diminuir nr de variaveis, aumentando assim o numero de
+     * campos para addicao de values
      */
     private void diminuirNrDeVariaveis() {
         this.numeroDeVar--;
@@ -543,43 +729,44 @@ public class Tela extends javax.swing.JFrame {
      * Metodo usado para aumentar nr de campos para adiccao de values
      */
     private void aumentarNrDeCampos(boolean aumentar) {
-
+        
         GridLayout layout = (GridLayout) pnMatriz.getLayout();
         layout.setColumns(this.numeroDeVar + 1);
         layout.setRows(this.numeroDeVar);
-
+        
         this.gerarCampos(aumentar);
-
-    
+        
         pnMatriz.setLayout(layout);
         pnMatriz.validate();
-
+        
     }
 
     /**
      * Var usada para armazenar cada componente gerado
      */
     private ArrayList componentes;
+
     /**
      * Metodo usado para gerar campos, de acordo com o numero de variaveis
-     * @param aumentar  - var q indica se eh para aumentar ou diminuir, permitindo assim aumentar ou diminuir tamanho da matriz
+     *
+     * @param aumentar - var q indica se eh para aumentar ou diminuir,
+     * permitindo assim aumentar ou diminuir tamanho da matriz
      */
     private void gerarCampos(boolean aumentar) {
         /**
          * Removendo todos componentes do painel da matriz
          */
         pnMatriz.removeAll();
-       componentes = new ArrayList();
-       
+        componentes = new ArrayList();
+
         /**
          * verifica se eh para aumentar variaveis or not
          */
-        if(aumentar)
+        if (aumentar) {
             pnMatriz.setSize(pnMatriz.getWidth() + 25, pnMatriz.getHeight() + 25);
-        else{
+        } else {
             pnMatriz.setSize(pnMatriz.getWidth() - 25, pnMatriz.getHeight() - 25);
         }
-        
         
         for (int i = 0; i < this.numeroDeVar; i++) {
             for (int j = 0; j <= this.numeroDeVar + 1; j++) {
@@ -590,14 +777,36 @@ public class Tela extends javax.swing.JFrame {
                 } else {
                     JXTextField tf = new JXTextField();
                     tf.setHorizontalAlignment(JXTextField.CENTER);
+                    tf.setFocusBehavior(org.jdesktop.swingx.prompt.PromptSupport.FocusBehavior.SHOW_PROMPT);
+                    tf.addKeyListener(new KeyListener() {
+                        
+                        @Override
+                        public void keyTyped(KeyEvent ke) {
+                            char input = ke.getKeyChar();
+                            if (!(Character.isDigit(input) || input == '-')) {
+                                getToolkit().beep();
+                                ke.consume();
+                            }
+                        }
+                        
+                        @Override
+                        public void keyPressed(KeyEvent ke) {
+                            
+                        }
+                        
+                        @Override
+                        public void keyReleased(KeyEvent ke) {
+                            
+                        }
+                    });
                     if (j == this.numeroDeVar + 1) {
-
+                        
                         tf.setPrompt("b" + (i + 1));
-
+                        
                     } else {
-
+                        
                         tf.setPrompt("X" + (i + 1) + (j + 1));
-
+                        
                     }
                     componentes.add(tf);
                     pnMatriz.add(tf);
@@ -606,16 +815,12 @@ public class Tela extends javax.swing.JFrame {
         }
     }
     
-    
     private void gerarCamposNoInicio() {
         /**
          * Removendo todos componentes do painel da matriz
          */
         pnMatriz.removeAll();
-       componentes = new ArrayList();
-       
-        
-        
+        componentes = new ArrayList();
         
         for (int i = 0; i < 2; i++) {
             for (int j = 0; j <= 2 + 1; j++) {
@@ -628,13 +833,13 @@ public class Tela extends javax.swing.JFrame {
                     tf.setHorizontalAlignment(JXTextField.CENTER);
                     tf.setSize(50, 50);
                     if (j == 3) {
-
+                        
                         tf.setPrompt("b" + (i + 1));
-
+                        
                     } else {
-
+                        
                         tf.setPrompt("X" + (i + 1) + (j + 1));
-
+                        
                     }
                     componentes.add(tf);
                     pnMatriz.add(tf);
@@ -643,5 +848,52 @@ public class Tela extends javax.swing.JFrame {
         }
     }
 
-    
+    /**
+     * Metodo para verificar tipo do input
+     *
+     * @param input
+     * @return
+     */
+    private boolean isNumero(char input) {
+        
+        if ((input < '0' || input > '9')
+                && (input != (char) KeyEvent.VK_PERIOD)
+                && input != (char) KeyEvent.VK_ENTER
+                && input != (char) KeyEvent.VK_BACK_SPACE
+                && input != (char) KeyEvent.VK_DELETE) {
+            return false;
+        }
+        
+        return true;
+    }
+
+    /**
+     * Metodo usado para limpar os campos
+     */
+    private void limparCampos() {
+        if(!mexido){
+            this.limparOsPrimeirosCampos();
+            return;
+        }
+        
+        for(Object ob : componentes){
+            JXTextField tf = (JXTextField) ob;
+            tf.setText(null);
+        }
+    }
+
+    private void limparOsPrimeirosCampos() {
+       this.tfX11.setText(null);
+       this.tfX12.setText(null);
+       this.tfX13.setText(null);
+       this.tfB1.setText(null);
+       this.tfX21.setText(null);
+       this.tfX22.setText(null);
+       this.tfX23.setText(null);
+       this.tfXB2.setText(null);
+       this.tfX31.setText(null);
+       this.tfX32.setText(null);
+       this.tfX33.setText(null);
+       this.tfB3.setText(null);
+    }
 }

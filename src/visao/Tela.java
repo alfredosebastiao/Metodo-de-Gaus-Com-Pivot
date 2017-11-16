@@ -615,7 +615,7 @@ public class Tela extends javax.swing.JFrame {
     private ArrayList<Double> cadaLinha = new ArrayList();
     private Controle controle = new Controle();
     private int numeroDeVar = 3;
-    private Map<String, Double> mapaDeResultados = new HashMap();
+    private Map<String, String> mapaDeResultados = new HashMap();
     /**
      * Variavel usada para verificar se o nr de variaveis foi ou nao mexido
      */

@@ -15,8 +15,8 @@ public class Controle {
     private ArrayList<ArrayList<Double>> matriz;
     private ArrayList<ArrayList<Double>> matrizEscalonada;
     private ArrayList<ArrayList<Double>> matrizParaTabela;
-    int numeroDeVariaveis = 3;
-    String textoAImprimir = "";
+    private int numeroDeVariaveis = 3;
+    private String textoAImprimir = "";
     private String nrDeCasas;
    
     
@@ -25,18 +25,17 @@ public class Controle {
      * @param matriz  - matriz a calcuar
      * @return Map<String, Double> map de resultados
      */
-    public Map<String,Double> receberMatriz(ArrayList<ArrayList<Double>> matriz, String nrDeCasasDecimais){
+    public Map<String,String> receberMatriz(ArrayList<ArrayList<Double>> matriz, String nrDeCasasDecimais){
         this.matriz = new ArrayList<>();
         this.matrizParaTabela = new ArrayList<>();
         this.matriz = matriz;
         this.numeroDeVariaveis = this.matriz.size();
         this.nrDeCasas = nrDeCasasDecimais;
         
+        String textoAImprimir = "";
         this.preencherVarsNaList();
         this.imprimirMatriz(matriz);
-        
-        
-        
+       
         for(int i = 0; i < this.numeroDeVariaveis; i++){
             this.matriz = retornarMatrizComPivot(this.matriz, i);
         }
@@ -157,10 +156,14 @@ public class Controle {
      * @param matriz - matriz
      * @return mapa de resultados
      */
-    public Map<String,Double> retornarResultados(ArrayList<ArrayList<Double>> matriz){
-        Map<String,Double> mapa = new HashMap<>();
-        double x = 0;
+    public Map<String,String> retornarResultados(ArrayList<ArrayList<Double>> matriz){
+        Map<String,String> mapa = new HashMap<>();
         double somaDosAnteriores = 0;
+        
+        if(possuiInfinidadeDeSolucoes(matriz)){
+            mapa.put("X", "Possui Infinidade de solucoes");
+            return mapa;
+        }
         for(int i = this.numeroDeVariaveis-1; i >= 0;i--){
                        
             somaDosAnteriores = matriz.get(i).get(this.numeroDeVariaveis);
@@ -169,7 +172,7 @@ public class Controle {
               
                 
                if(i == j){
-                   mapa.put("X"+(i+1), somaDosAnteriores/matriz.get(i).get(i));
+                   mapa.put("X"+(i+1), String.format("%."+this.nrDeCasas+"f",somaDosAnteriores/matriz.get(i).get(i)));
                    matriz.get(i).set(this.numeroDeVariaveis, somaDosAnteriores/matriz.get(i).get(i));
                    break;
                  
@@ -184,6 +187,28 @@ public class Controle {
         }
         
         return mapa;
+    }
+    
+    
+    /**
+     * Metodo usado para verificar se o sistema possui infinidade de solucoes
+     * @param matriz - matriz a verificar
+     * @return 
+     */
+    private boolean possuiInfinidadeDeSolucoes(ArrayList<ArrayList<Double>> matriz){
+        boolean contemZeroApenas = true;
+        for(int i=0; i < this.numeroDeVariaveis; i++){
+            for(int j = 0; j <= this.numeroDeVariaveis; j++){
+                if(matriz.get(i).get(j) != 0){
+                    contemZeroApenas = false;
+                }
+            }
+            
+            if(contemZeroApenas)
+                return true;
+        }
+        
+        return false;
     }
     
     /**

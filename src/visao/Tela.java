@@ -288,6 +288,11 @@ public class Tela extends javax.swing.JFrame {
 
         tfNrDeCasas.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         tfNrDeCasas.setText("2");
+        tfNrDeCasas.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                tfNrDeCasasKeyTyped(evt);
+            }
+        });
 
         jLabel5.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel5.setText("Nr de Casas Decimais");
@@ -553,6 +558,14 @@ public class Tela extends javax.swing.JFrame {
     private void btnRemoverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRemoverActionPerformed
         this.limparCampos();
     }//GEN-LAST:event_btnRemoverActionPerformed
+
+    private void tfNrDeCasasKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfNrDeCasasKeyTyped
+        char input = evt.getKeyChar();
+        if (!(Character.isDigit(input))) {
+            getToolkit().beep();
+            evt.consume();
+        }
+    }//GEN-LAST:event_tfNrDeCasasKeyTyped
 
     /**
      * @param args the command line arguments

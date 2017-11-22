@@ -32,7 +32,7 @@ public class Controle {
         this.numeroDeVariaveis = this.matriz.size();
         this.nrDeCasas = nrDeCasasDecimais;
         
-        String textoAImprimir = "";
+        this.textoAImprimir = "";
         this.preencherVarsNaList();
         this.imprimirMatriz(matriz);
        

@@ -23,7 +23,8 @@ import org.jdesktop.swingx.JXTextField;
 
 /**
  *
- * @author User
+ * @author Alfredo Sebastiao
+ * @author Ercilio Marques
  */
 public class Tela extends javax.swing.JFrame {
 
@@ -433,6 +434,7 @@ public class Tela extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void btnCalcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCalcularActionPerformed
+       jTextArea1.setText(null);
         if (!mexido) {
             this.preencherArrayDeValores();
         } else {
@@ -450,12 +452,14 @@ public class Tela extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void tfX11KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfX11KeyTyped
-        char input = evt.getKeyChar();
-        if (!(Character.isDigit(input) || input == '-')) {
-            getToolkit().beep();
-            evt.consume();
-        }
-        
+//        char input = evt.getKeyChar();
+//        if (!(Character.isDigit(input) || input == '-')) {
+//            getToolkit().beep();
+//            evt.consume();
+//        }
+        JOptionPane.showMessageDialog(this, KeyEvent.VK_ENTER);
+        JOptionPane.showMessageDialog(this, KeyEvent.VK_SPACE);
+        JOptionPane.showMessageDialog(this, KeyEvent.VK_A);
     }//GEN-LAST:event_tfX11KeyTyped
 
     private void tfX12KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfX12KeyTyped

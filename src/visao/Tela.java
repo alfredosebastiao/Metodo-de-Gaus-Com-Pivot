@@ -457,14 +457,12 @@ public class Tela extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void tfX11KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfX11KeyTyped
-//        char input = evt.getKeyChar();
-//        if (!(Character.isDigit(input) || input == '-')) {
-//            getToolkit().beep();
-//            evt.consume();
-//        }
-        JOptionPane.showMessageDialog(this, KeyEvent.VK_ENTER);
-        JOptionPane.showMessageDialog(this, KeyEvent.VK_SPACE);
-        JOptionPane.showMessageDialog(this, KeyEvent.VK_A);
+        char input = evt.getKeyChar();
+        if (!(Character.isDigit(input) || input == '-')) {
+            getToolkit().beep();
+            evt.consume();
+        }
+        
     }//GEN-LAST:event_tfX11KeyTyped
 
     private void tfX12KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tfX12KeyTyped
